@@ -1,29 +1,27 @@
-import React from "react";
+import React, { ChangeEvent, useState } from "react";
 import styled from "styled-components";
 
 function MainPage() {
+  const [value, setValue] = useState("");
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setValue(e.target.value);
+  };
   return (
-    <PageContainer>
+    <Container>
       <PhotoBox>
-        <SoliNameBox>
-          <SoliProfileImg src="/img/eundol.jpeg" />
-          <SoliName>iameundori + iamjaeill</SoliName>
-        </SoliNameBox>
-        {/* <PhotoButton to="/photo"> */}
-        <PhotoButton>
-          <SoliPhoto src="/img/soli.jpg" />
-        </PhotoButton>
+        <NameBox>
+          <ProfileImg src="/img/eundol.jpeg" />
+          <Name>iameundori + iamjaeill</Name>
+        </NameBox>
+        <PhotoSlider>
+          <WeddingPhoto src="/img/soli.jpg" />
+        </PhotoSlider>
         <LikeBox>
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              flexDirection: "row",
-            }}
-          >
+          <DdayBox>
             <LikeImg src="/img/heart.png" />
-            <p> + 3648 days</p>
-          </div>
+            <Dday> + 3648 days</Dday>
+          </DdayBox>
           <LikeNum>좋아요 1234개</LikeNum>
         </LikeBox>
         <MainMsg>
@@ -45,7 +43,11 @@ function MainPage() {
       </PhotoBox>
       <CommentBox>
         <form>
-          <CommentInput placeholder="댓글을 입력하세요." />
+          <CommentInput
+            placeholder="댓글을 입력하세요."
+            value={value}
+            onChange={handleChange}
+          />
           <AddButton>입력</AddButton>
         </form>
         <Comment>
@@ -54,7 +56,7 @@ function MainPage() {
           <p>와 이거 잘만들었다 어디서했어?</p>
         </Comment>
       </CommentBox>
-    </PageContainer>
+    </Container>
   );
 }
 
@@ -63,19 +65,19 @@ const FlexDiv = styled.div`
   align-items: center;
 `;
 
-const PageContainer = styled.div``;
+const Container = styled.div``;
 
 const PhotoBox = styled.div`
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   border-bottom: 1px solid #ccc;
 `;
 
-const SoliNameBox = styled(FlexDiv)`
+const NameBox = styled(FlexDiv)`
   flex-direction: row;
   margin-left: 15px;
 `;
 
-const SoliProfileImg = styled.img`
+const ProfileImg = styled.img`
   width: 30px;
   height: 30px;
   border: 1px solid #000;
@@ -83,17 +85,17 @@ const SoliProfileImg = styled.img`
   margin-right: 10px;
 `;
 
-const SoliName = styled.p`
+const Name = styled.p`
   font-size: 1em;
 `;
 
-const SoliPhoto = styled.img`
+const WeddingPhoto = styled.img`
   width: 100vw;
   height: 350px;
 `;
 
 // const PhotoButton = styled(Link)``;
-const PhotoButton = styled.div`
+const PhotoSlider = styled.div`
   border-bottom: 1px solid #ccc;
 `;
 
@@ -110,6 +112,12 @@ const LikeImg = styled.img`
   margin: 0 20px;
 `;
 
+const DdayBox = styled(FlexDiv)`
+  flex-direction: row;
+`;
+
+const Dday = styled.p``;
+
 const LikeNum = styled.p`
   margin: -3px 0 -1px 20px;
   flex-direction: column;
@@ -124,7 +132,7 @@ const CommentBox = styled.div`
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  padding: 10px;
+  padding: 0 10px;
 `;
 
 const CommentInput = styled.input`

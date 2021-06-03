@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 function GroomPage() {
   return (
-    <PageContainer>
+    <Container>
       <GroomImg />
       <GroomMsg>
         안녕하세요. <br />
@@ -14,20 +14,16 @@ function GroomPage() {
         부디 저희의 기쁜 날에 함께해주시는 <br />
         모두에게도 기쁜 날이 될 수 있길 바랍니다.
       </GroomMsg>
+      <AccountMsg>신랑에게 축하의 마음 담아 축의금 보내기</AccountMsg>
       <AccountBox>
         <p>신랑 측 계좌번호</p>
-        <AccountButton>복사</AccountButton>
+        <AccountButton>보기</AccountButton>
       </AccountBox>
-      <AddMsg>
-        어려운 시국에 직업 오시기 어려우신 분들께서는
-        <br />
-        신랑에게 보내는 축의금은 이쪽 계좌로 보내주시면 감사하겠습니다.
-      </AddMsg>
-    </PageContainer>
+    </Container>
   );
 }
 
-const PageContainer = styled.div`
+const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -38,6 +34,7 @@ const PageContainer = styled.div`
 const GroomImg = styled.div`
   width: 250px;
   height: 250px;
+  margin-top: 10px;
   border: 2px solid #ccc;
   border-radius: 50%;
 `;
@@ -49,7 +46,6 @@ const GroomMsg = styled.p`
 
 const AccountBox = styled.div`
   display: flex;
-  flex-direction: row;
   align-items: center;
 `;
 
@@ -63,8 +59,14 @@ const AccountButton = styled.button`
   background-color: #b6c9f0;
 `;
 
-const AddMsg = styled.p`
+const AccountMsg = styled.p`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  padding-top: 20px;
   font-size: 0.7em;
+  border-top: 1px solid #ccc;
 `;
 
 export default GroomPage;

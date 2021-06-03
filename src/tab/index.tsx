@@ -11,23 +11,23 @@ import PhotoPage from "../components/PhotoPage";
 export default function PageTab() {
   return (
     <TabContainer>
-      <LogoBox>
-        <Logo to="/">Doristagram</Logo>
-      </LogoBox>
-      <StoryBox>
-        <StoryButton to="/groom">
+      <LogoLinkBox>
+        <LogoLink to="/">Doristagram</LogoLink>
+      </LogoLinkBox>
+      <StoryLinkBox>
+        <StoryLink to="/groom">
           <StoryImg>잴</StoryImg>
           GROOM
-        </StoryButton>
-        <StoryButton to="/bride">
+        </StoryLink>
+        <StoryLink to="/bride">
           <StoryImg>솔</StoryImg>
           BRIDE
-        </StoryButton>
-        <StoryButton to="/map">
+        </StoryLink>
+        <StoryLink to="/map">
           <StoryImg>지도</StoryImg>
           MAP
-        </StoryButton>
-      </StoryBox>
+        </StoryLink>
+      </StoryLinkBox>
       <RouteContainer>
         <Switch>
           <Route exact path="/" component={MainPage} />
@@ -46,14 +46,21 @@ const FlexDiv = styled.div`
   align-items: center;
 `;
 
-const TabContainer = styled.div``;
-
-const LogoBox = styled.div`
-  padding: 20px;
-  background-color: purple;
+const TabContainer = styled.div`
+  position: relative;
+  padding-top: 80px;
 `;
 
-const Logo = styled(Link)`
+const LogoLinkBox = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  padding: 15px;
+  background: linear-gradient(to top left, yellow, orange, #cc0e74, purple);
+`;
+
+const LogoLink = styled(Link)`
   font-family: "Dancing Script", cursive;
   font-size: 1.8em;
   font-weight: 800;
@@ -61,12 +68,12 @@ const Logo = styled(Link)`
   color: #fff;
 `;
 
-const StoryBox = styled(FlexDiv)`
+const StoryLinkBox = styled(FlexDiv)`
   justify-content: space-between;
-  padding: 10px;
+  /* padding: 10px; */
   border-bottom: 1px solid #ccc;
 `;
-const StoryButton = styled(Link)`
+const StoryLink = styled(Link)`
   display: flex;
   flex-direction: column;
   align-items: center;
