@@ -11,17 +11,23 @@ import PhotoPage from "../components/PhotoPage";
 export default function PageTab() {
   return (
     <TabContainer>
-      <MainLogo>
-        <LinkButton to="/">Eundoristagram</LinkButton>
-      </MainLogo>
-      <StoryButton>
-        <LinkButton to="/groom">GROOM</LinkButton>
-        <LinkButton to="/bride">BRIDE</LinkButton>
-        <LinkButton to="/map">MAP</LinkButton>
-      </StoryButton>
-      <PhotoButton>
-        <LinkButton to="/photo">PHOTO</LinkButton>
-      </PhotoButton>
+      <LogoBox>
+        <Logo to="/">Doristagram</Logo>
+      </LogoBox>
+      <StoryBox>
+        <StoryButton to="/groom">
+          <StoryImg>잴</StoryImg>
+          GROOM
+        </StoryButton>
+        <StoryButton to="/bride">
+          <StoryImg>솔</StoryImg>
+          BRIDE
+        </StoryButton>
+        <StoryButton to="/map">
+          <StoryImg>지도</StoryImg>
+          MAP
+        </StoryButton>
+      </StoryBox>
       <RouteContainer>
         <Switch>
           <Route exact path="/" component={MainPage} />
@@ -35,12 +41,51 @@ export default function PageTab() {
   );
 }
 
+const FlexDiv = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
 const TabContainer = styled.div``;
 
-const MainLogo = styled.div``;
-const StoryButton = styled.div``;
-const PhotoButton = styled.div``;
+const LogoBox = styled.div`
+  padding: 20px;
+  background-color: purple;
+`;
 
-const LinkButton = styled(Link)``;
+const Logo = styled(Link)`
+  font-family: "Dancing Script", cursive;
+  font-size: 1.8em;
+  font-weight: 800;
+  text-decoration: none;
+  color: #fff;
+`;
+
+const StoryBox = styled(FlexDiv)`
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+`;
+const StoryButton = styled(Link)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  text-decoration: none;
+  font-size: 1.2em;
+  color: #000;
+`;
+
+const StoryImg = styled(FlexDiv)`
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  background-color: #fff;
+  font-size: 1.5em;
+`;
 
 const RouteContainer = styled.div``;
