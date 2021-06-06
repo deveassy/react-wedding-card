@@ -1,32 +1,19 @@
-import React, { ReactNode } from "react";
-import { Switch, Route } from "react-router-dom";
-import styled from "styled-components";
+import React from "react";
+import { Switch, Route, BrowserRouter } from "react-router-dom";
 
-import MainPage from "../components/MainPage";
-import BridePage from "../components/BridePage";
-import GroomPage from "../components/GroomPage";
-import PhotoPage from "../components/PhotoPage";
-import MapPage from "../components/MapPage";
+import NotFound from "../containers/NotFound";
+import MainRoutes from "./main";
 
-export default function RootRouter({ children }: { children: ReactNode }) {
-  const NotFound = () => {
-    return <NoPage>죄송합니다. 주소를 확인해주세요 :)</NoPage>;
-  };
+/**
+ * 최상위 라우트
+ */
+export default function AppRoute() {
   return (
-    <RouterContainer>
+    <BrowserRouter basename="/main">
       <Switch>
-        {children}
-        <Route exact path="/" component={MainPage} />
-        <Route path="/groom" component={GroomPage} />
-        <Route path="/bride" component={BridePage} />
-        <Route path="/map" component={MapPage} />
-        <Route path="/photo" component={PhotoPage} />
+        <Route path="/" component={MainRoutes} />
         <Route component={NotFound} />
       </Switch>
-    </RouterContainer>
+    </BrowserRouter>
   );
 }
-
-const RouterContainer = styled.div``;
-
-const NoPage = styled.h1``;
