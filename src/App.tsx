@@ -1,31 +1,25 @@
 import React, { Fragment } from "react";
-import { createGlobalStyle } from "styled-components";
-import { BrowserRouter } from "react-router-dom";
-import RootRouter from "./routes";
-import PageTab from "./tab";
 
-function App() {
+import { GlobalStyle } from "./globals/styles";
+import RootRoute from "./routes";
+
+/**
+ * 앱의 랜더에 필요한 설정 적용
+ * - 글로벌 스타일 적용
+ */
+function RenderApp() {
   return (
     <Fragment>
+      {/* 글로벌 스타일 정의 */}
       <GlobalStyle />
-      <BrowserRouter>
-        <RootRouter>
-          <PageTab />
-        </RootRouter>
-      </BrowserRouter>
+      {/* 페이지 라우트 */}
+      <RootRoute />
     </Fragment>
   );
 }
 
-const GlobalStyle = createGlobalStyle`
-  @font-face {
-    font-family: 'Dancing Script', cursive;
-    src: url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
-  }
- body {
-   margin: 0;
-   /* background-color: #fff5eb; */
- }
-`;
+function App() {
+  return <RenderApp />;
+}
 
 export default App;
