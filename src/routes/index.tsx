@@ -9,7 +9,7 @@ import MainRoutes from "./main";
  */
 export default function AppRoute() {
   return (
-    <BrowserRouter basename="/main">
+    <BrowserRouter basename="main">
       <Switch>
         <Route path="/" component={MainRoutes} />
         <Route component={NotFound} />

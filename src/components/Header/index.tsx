@@ -7,6 +7,7 @@ import {
   StoryImg,
   StoryLink,
 } from "./styles";
+import paths from "../../routes/paths.json";
 
 /**
  * 헤더 정보
@@ -16,7 +17,7 @@ export default function Header() {
   return (
     <TabContainer>
       <LogoLinkBox>
-        <LogoLink to="/">Doristagram</LogoLink>
+        <LogoLink to={paths.main}>Doristagram</LogoLink>
       </LogoLinkBox>
       <StoryLinkBox>
         <StoryLink to="/groom">
