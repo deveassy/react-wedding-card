@@ -88,6 +88,11 @@ const Comment = styled.div`
   padding: 5px;
 `;
 
+const SlideImg = styled.img`
+  width: 100%;
+  height: 100%;
+`;
+
 export {
   Container,
   PhotoBox,
@@ -106,4 +111,5 @@ export {
   CommentInput,
   AddButton,
   Comment,
+  SlideImg,
 };
