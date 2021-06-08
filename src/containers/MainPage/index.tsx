@@ -27,14 +27,16 @@ function MainPage() {
     setValue(e.target.value);
   };
 
-  const todayData: any = new Date();
+  const todayData = new Date();
   todayData.setHours(0);
   todayData.setMinutes(0);
   todayData.setSeconds(0, 0);
 
-  const anniversaryData: any = new Date("2011/06/09");
-  const differenceData: any =
-    (todayData - anniversaryData) / (1000 * 60 * 60 * 24) + 1;
+  const anniversaryDate = new Date("2011/06/09");
+
+  const differenceData =
+    (todayData.getTime() - anniversaryDate.getTime()) / (1000 * 60 * 60 * 24) +
+    1;
 
   return (
     <Container>
