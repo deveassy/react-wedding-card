@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -8,7 +8,7 @@ export const Container = styled.div`
   padding: 10px;
 `;
 
-export const BrideImg = styled.img`
+const BrideImg = styled.img`
   width: 250px;
   height: 250px;
   margin-top: 10px;
@@ -16,17 +16,17 @@ export const BrideImg = styled.img`
   border-radius: 50%;
 `;
 
-export const BrideMsg = styled.p`
+const BrideMsg = styled.p`
   margin: 10px;
   font-size: 1.2em;
 `;
 
-export const AccountBox = styled.div`
+const AccountBox = styled.div`
   display: flex;
   align-items: center;
 `;
 
-export const AccountButton = styled.button`
+const AccountButton = styled.button`
   width: 70px;
   height: 35px;
   padding: 10px;
@@ -34,9 +34,10 @@ export const AccountButton = styled.button`
   border: 0;
   border-radius: 50%;
   background-color: #ffcead;
+  cursor: pointer;
 `;
 
-export const AccountMsg = styled.p`
+const AccountMsg = styled.p`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -45,3 +46,23 @@ export const AccountMsg = styled.p`
   font-size: 0.7em;
   border-top: 1px solid #ccc;
 `;
+
+const AccountNum = styled.input`
+  border: 0;
+  outline: none;
+`;
+
+const CopyButton = styled.button`
+  margin-left: 10px;
+`;
+
+export {
+  Container,
+  BrideImg,
+  BrideMsg,
+  AccountMsg,
+  AccountBox,
+  AccountButton,
+  AccountNum,
+  CopyButton,
+};

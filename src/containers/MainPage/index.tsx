@@ -50,8 +50,6 @@ function MainPage() {
           style={{
             height: "400px",
             border: "1px solid #000",
-            display: "flex",
-            flexDirection: "row",
           }}
           spaceBetween={50}
           slidesPerView={3}
