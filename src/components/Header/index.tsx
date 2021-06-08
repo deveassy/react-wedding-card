@@ -20,17 +20,17 @@ export default function Header() {
         <LogoLink to={paths.main}>Doristagram</LogoLink>
       </LogoLinkBox>
       <StoryLinkBox>
-        <StoryLink to="/groom">
-          <StoryImg>잴</StoryImg>
-          GROOM
+        <StoryLink to={paths.groom}>
+          <StoryImg src="/img/groom.jpg" />
+          iamjaeill
         </StoryLink>
-        <StoryLink to="/bride">
-          <StoryImg>솔</StoryImg>
-          BRIDE
+        <StoryLink to={paths.bride}>
+          <StoryImg src="/img/bride.jpg" />
+          iameundori
         </StoryLink>
-        <StoryLink to="/map">
-          <StoryImg>지도</StoryImg>
-          MAP
+        <StoryLink to={paths.map}>
+          <StoryImg src="/img/kmap.png" />
+          kakaomap
         </StoryLink>
       </StoryLinkBox>
     </TabContainer>

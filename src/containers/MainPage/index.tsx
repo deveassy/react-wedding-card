@@ -1,4 +1,5 @@
 import React, { ChangeEvent, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
 import {
   Container,
   PhotoBox,
@@ -25,6 +26,16 @@ function MainPage() {
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
   };
+
+  const todayData: any = new Date();
+  todayData.setHours(0);
+  todayData.setMinutes(0);
+  todayData.setSeconds(0, 0);
+
+  const anniversaryData: any = new Date("2011/06/09");
+  const differenceData: any =
+    (todayData - anniversaryData) / (1000 * 60 * 60 * 24) + 1;
+
   return (
     <Container>
       <PhotoBox>
@@ -32,13 +43,31 @@ function MainPage() {
           <ProfileImg src="/img/eundol.jpeg" />
           <Name>iameundori + iamjaeill</Name>
         </NameBox>
-        <PhotoSlider>
+        {/* <PhotoSlider>
           <WeddingPhoto src="/img/soli.jpg" />
-        </PhotoSlider>
+        </PhotoSlider> */}
+        <Swiper
+          style={{
+            height: "400px",
+            border: "1px solid #000",
+            display: "flex",
+            flexDirection: "row",
+          }}
+          spaceBetween={50}
+          slidesPerView={3}
+        >
+          <SwiperSlide style={{ backgroundColor: "yellow", height: "100%" }}>
+            Slide 1
+          </SwiperSlide>
+          <SwiperSlide style={{ backgroundColor: "yellowgreen" }}>
+            Slide 2
+          </SwiperSlide>
+          <SwiperSlide style={{ backgroundColor: "blue" }}>Slide 3</SwiperSlide>
+        </Swiper>
         <LikeBox>
           <DdayBox>
             <LikeImg src="/img/heart.png" />
-            <Dday> + 3648 days</Dday>
+            <Dday> + {differenceData} days</Dday>
           </DdayBox>
           <LikeNum>좋아요 1234개</LikeNum>
         </LikeBox>
