@@ -30,7 +30,6 @@ export const LogoLink = styled(Link)`
 
 export const StoryLinkBox = styled(FlexDiv)`
   justify-content: space-between;
-  /* padding: 10px; */
   border-bottom: 1px solid #ccc;
 `;
 export const StoryLink = styled(Link)`
@@ -39,18 +38,14 @@ export const StoryLink = styled(Link)`
   align-items: center;
   margin: 10px;
   text-decoration: none;
-  font-size: 1.2em;
+  font-size: 1.05em;
   color: #000;
 `;
 
-export const StoryImg = styled(FlexDiv)`
-  justify-content: center;
-  width: 50px;
-  height: 50px;
-  padding: 10px;
+export const StoryImg = styled.img`
+  width: 70px;
+  height: 70px;
   margin-bottom: 10px;
   border: 2px solid #ccc;
   border-radius: 50%;
-  background-color: #fff;
-  font-size: 1.5em;
 `;

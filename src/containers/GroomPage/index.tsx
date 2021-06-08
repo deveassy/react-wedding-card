@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import Modal from "../../components/Modal";
 import {
   Container,
   GroomImg,
@@ -6,9 +7,29 @@ import {
   AccountMsg,
   AccountBox,
   AccountButton,
+  AccountNum,
+  CopyButton,
 } from "./styles";
 
 function GroomPage() {
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const openModal = () => {
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+  };
+
+  const handleCopy = () => {
+    var obj = document.getElementById("numInput") as HTMLInputElement;
+    obj.select(); //인풋 컨트롤의 내용 전체 선택
+    document.execCommand("copy"); //복사
+    obj.setSelectionRange(0, 0); //선택영역 초기화
+    alert("copy right!");
+  };
+
   return (
     <Container>
       <GroomImg src="/img/groom.jpg" />
@@ -24,7 +45,21 @@ function GroomPage() {
       <AccountMsg>신랑에게 축하의 마음 담아 축의금 보내기</AccountMsg>
       <AccountBox>
         <p>신랑 측 계좌번호</p>
-        <AccountButton>보기</AccountButton>
+        <AccountButton onClick={openModal}>보기</AccountButton>
+        <Modal
+          active
+          open={modalOpen}
+          close={closeModal}
+          header="계좌번호 보기"
+        >
+          <AccountNum
+            type="text"
+            id="numInput"
+            value="신한 123456700"
+            readOnly
+          />
+          <CopyButton onClick={handleCopy}>복사</CopyButton>
+        </Modal>
       </AccountBox>
     </Container>
   );
