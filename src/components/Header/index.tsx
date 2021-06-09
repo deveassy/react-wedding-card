@@ -29,7 +29,7 @@ export default function Header() {
           iameundori
         </StoryLink>
         <StoryLink to={paths.map}>
-          <StoryImg src="/img/kmap.png" />
+          <StoryImg src="/img/kmapicon.png" />
           kakaomap
         </StoryLink>
       </StoryLinkBox>

@@ -22,4 +22,39 @@ const LocationName = styled.h1`
 
 const Location = styled.p``;
 
-export { PageContainer, MapMsg, MapBox, LocationName, Location };
+const MapLinkBox = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 10px;
+`;
+
+const MapLink = styled.a`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #000;
+`;
+
+const MapImg = styled.img`
+  width: 60px;
+  height: 60px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+`;
+
+const MapName = styled.p``;
+
+export {
+  PageContainer,
+  MapMsg,
+  MapBox,
+  LocationName,
+  Location,
+  MapLinkBox,
+  MapLink,
+  MapImg,
+  MapName,
+};

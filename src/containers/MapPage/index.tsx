@@ -5,6 +5,10 @@ import {
   MapBox,
   LocationName,
   Location,
+  MapLinkBox,
+  MapLink,
+  MapImg,
+  MapName,
 } from "./styles";
 declare global {
   interface Window {
@@ -59,7 +63,18 @@ function MapPage() {
       <MapBox>
         <LocationName>명진컨벤션웨딩부페</LocationName>
         <Location>인천광역시 강화군 강화읍 충렬사로 138</Location>
-        <div id="kakaomap" style={{ width: "80vw", height: "40vh" }}></div>
+        <div id="kakaomap" style={{ width: "80vw", height: "35vh" }}></div>
+        <MapLinkBox>
+          {/* map link 연결방식에 대해 생각해봐야 함 */}
+          <MapLink href="https://play.google.com/store/apps/details?id=com.skt.tmap.ku&hl=ko&gl=US">
+            <MapImg src="/img/tmapicon.png" alt="티맵로고" />
+            <MapName>티맵</MapName>
+          </MapLink>
+          <MapLink href="https://map.naver.com/v5/entry/place/16550040?c=14078705.2648180,4541454.9695063,15,0,0,0,dh">
+            <MapImg src="/img/navermapicon.png" alt="네이버맵로고" />
+            <MapName>네이버맵</MapName>
+          </MapLink>
+        </MapLinkBox>
       </MapBox>
     </PageContainer>
   );
