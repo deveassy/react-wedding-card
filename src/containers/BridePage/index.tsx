@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import Modal from "../../components/Modal";
 import {
   Container,
@@ -21,8 +21,6 @@ function BridePage() {
   const closeModal = () => {
     setModalOpen(false);
   };
-
-  // const textInput = useRef();
 
   const handleCopy = () => {
     var obj = document.getElementById("numInput") as HTMLInputElement;

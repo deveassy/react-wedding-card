@@ -1,13 +1,16 @@
 import React, { ChangeEvent, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import SwiperCore, { Pagination, Autoplay, Navigation } from "swiper";
+
+import "swiper/swiper.scss";
+import "swiper/components/pagination/pagination.scss";
+import "swiper/components/navigation/navigation.scss";
 import {
   Container,
   PhotoBox,
   NameBox,
   ProfileImg,
   Name,
-  WeddingPhoto,
-  PhotoSlider,
   LikeBox,
   LikeImg,
   DdayBox,
@@ -18,7 +21,19 @@ import {
   CommentInput,
   AddButton,
   Comment,
+  SlideImg,
 } from "./styles";
+
+SwiperCore.use([Pagination, Autoplay, Navigation]);
+
+/**
+ * 슬라이더 사진 모음
+ */
+const sliders = [
+  { src: "/img/soli.jpg", alt: "img1" },
+  { src: "/img/bride.jpg", alt: "img2" },
+  { src: "/img/groom.jpg", alt: "img3" },
+];
 
 function MainPage() {
   const [value, setValue] = useState("");
@@ -27,14 +42,19 @@ function MainPage() {
     setValue(e.target.value);
   };
 
-  const todayData: any = new Date();
-  todayData.setHours(0);
-  todayData.setMinutes(0);
-  todayData.setSeconds(0, 0);
+  const todayDate = new Date();
+  todayDate.setHours(0);
+  todayDate.setMinutes(0);
+  todayDate.setSeconds(0, 0);
 
-  const anniversaryData: any = new Date("2011/06/09");
-  const differenceData: any =
-    (todayData - anniversaryData) / (1000 * 60 * 60 * 24) + 1;
+  const anniversaryDate = new Date("2011/06/09");
+
+  /**
+   * D+day
+   */
+  const meetDate =
+    (todayDate.getTime() - anniversaryDate.getTime()) / (1000 * 60 * 60 * 24) +
+    1;
 
   return (
     <Container>
@@ -43,29 +63,27 @@ function MainPage() {
           <ProfileImg src="/img/eundol.jpeg" />
           <Name>iameundori + iamjaeill</Name>
         </NameBox>
-        {/* <PhotoSlider>
-          <WeddingPhoto src="/img/soli.jpg" />
-        </PhotoSlider> */}
         <Swiper
           style={{
-            height: "400px",
-            border: "1px solid #000",
+            height: "373px",
           }}
+          className="swiper-container"
           spaceBetween={50}
-          slidesPerView={3}
+          slidesPerView={1}
+          pagination={{ clickable: true }}
         >
-          <SwiperSlide style={{ backgroundColor: "yellow", height: "100%" }}>
-            Slide 1
-          </SwiperSlide>
-          <SwiperSlide style={{ backgroundColor: "yellowgreen" }}>
-            Slide 2
-          </SwiperSlide>
-          <SwiperSlide style={{ backgroundColor: "blue" }}>Slide 3</SwiperSlide>
+          {sliders.map((slider) => {
+            return (
+              <SwiperSlide className="swiper-slide">
+                <SlideImg src={slider.src} alt={slider.alt} />
+              </SwiperSlide>
+            );
+          })}
         </Swiper>
         <LikeBox>
           <DdayBox>
             <LikeImg src="/img/heart.png" />
-            <Dday> + {differenceData} days</Dday>
+            <Dday> + {meetDate} days</Dday>
           </DdayBox>
           <LikeNum>좋아요 1234개</LikeNum>
         </LikeBox>
