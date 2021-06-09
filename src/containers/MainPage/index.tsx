@@ -26,6 +26,15 @@ import {
 
 SwiperCore.use([Pagination, Autoplay, Navigation]);
 
+/**
+ * 슬라이더 사진 모음
+ */
+const sliders = [
+  { src: "/img/soli.jpg", alt: "img1" },
+  { src: "/img/bride.jpg", alt: "img2" },
+  { src: "/img/groom.jpg", alt: "img3" },
+];
+
 function MainPage() {
   const [value, setValue] = useState("");
 
@@ -40,6 +49,9 @@ function MainPage() {
 
   const anniversaryDate = new Date("2011/06/09");
 
+  /**
+   * D+day
+   */
   const meetDate =
     (todayDate.getTime() - anniversaryDate.getTime()) / (1000 * 60 * 60 * 24) +
     1;
@@ -60,15 +72,13 @@ function MainPage() {
           slidesPerView={1}
           pagination={{ clickable: true }}
         >
-          <SwiperSlide className="swiper-slide">
-            <SlideImg src="/img/soli.jpg" alt="" />
-          </SwiperSlide>
-          <SwiperSlide className="swiper-slide">
-            <SlideImg src="/img/bride.jpg" alt="" />
-          </SwiperSlide>
-          <SwiperSlide className="swiper-slide">
-            <SlideImg src="/img/groom.jpg" alt="" />
-          </SwiperSlide>
+          {sliders.map((slider) => {
+            return (
+              <SwiperSlide className="swiper-slide">
+                <SlideImg src={slider.src} alt={slider.alt} />
+              </SwiperSlide>
+            );
+          })}
         </Swiper>
         <LikeBox>
           <DdayBox>
