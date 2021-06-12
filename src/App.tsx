@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 
-import { GlobalStyle } from "./globals/styles";
+import { GlobalStyle } from "./globals/styles.js";
 import RootRoute from "./routes";
 
 /**

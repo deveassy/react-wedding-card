@@ -1,4 +1,6 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+
+type timeProps = { time?: any };
 
 const FlexDiv = styled.div`
   display: flex;
@@ -44,6 +46,10 @@ const LikeBox = styled.div`
   padding: 0 0 -20px 10px;
 `;
 
+const LikeImgBox = styled.button`
+  background-color: none;
+`;
+
 const LikeImg = styled.img`
   width: 25px;
   height: 25px;
@@ -54,7 +60,30 @@ const DdayBox = styled(FlexDiv)`
   flex-direction: row;
 `;
 
-const Dday = styled.p``;
+const MeetDay = styled.p``;
+
+const WeddingDay = styled.h2<timeProps>`
+  position: absolute;
+  /* ${(props) => {
+    if (props.time) {
+      return css`
+        top: 30px;
+      `;
+    }
+    return 0;
+  }}; */
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "Kaushan";
+`;
+
+const WeddingCount = styled.h3`
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "Kaushan";
+`;
 
 const LikeNum = styled.p`
   margin: -3px 0 -1px 20px;
@@ -102,9 +131,12 @@ export {
   WeddingPhoto,
   PhotoSlider,
   LikeBox,
+  LikeImgBox,
   LikeImg,
   DdayBox,
-  Dday,
+  MeetDay,
+  WeddingDay,
+  WeddingCount,
   LikeNum,
   MainMsg,
   CommentBox,

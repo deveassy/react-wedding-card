@@ -14,7 +14,8 @@ import {
   LikeBox,
   LikeImg,
   DdayBox,
-  Dday,
+  WeddingDay,
+  WeddingCount,
   LikeNum,
   MainMsg,
   CommentBox,
@@ -35,7 +36,13 @@ const sliders = [
   { src: "/img/groom.jpg", alt: "img3" },
 ];
 
+// type mainProps = {
+//   time?: any;
+// };
+
 function MainPage() {
+  // const { time } = props;
+
   const [value, setValue] = useState("");
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -48,6 +55,7 @@ function MainPage() {
   todayDate.setSeconds(0, 0);
 
   const anniversaryDate = new Date("2011/06/09");
+  const weddingDate = new Date("2021/10/16");
 
   /**
    * D+day
@@ -55,6 +63,12 @@ function MainPage() {
   const meetDate =
     (todayDate.getTime() - anniversaryDate.getTime()) / (1000 * 60 * 60 * 24) +
     1;
+
+  /**
+   * D-day
+   */
+  const weddingDday =
+    (weddingDate.getTime() - todayDate.getTime()) / (1000 * 60 * 60 * 24);
 
   return (
     <Container>
@@ -72,6 +86,19 @@ function MainPage() {
           slidesPerView={1}
           pagination={{ clickable: true }}
         >
+          <SwiperSlide
+            className="swiper-slide"
+            style={{ position: "relative" }}
+          >
+            <WeddingDay style={{ top: "0" }}>2021.10.16 SAT</WeddingDay>
+            <WeddingDay style={{ top: "30px" }}>12:00 PM</WeddingDay>
+            <WeddingCount>D - {weddingDday}</WeddingCount>
+            <SlideImg
+              src="/img/soli.jpg"
+              alt="main-img"
+              style={{ opacity: "0.2" }}
+            />
+          </SwiperSlide>
           {sliders.map((slider) => {
             return (
               <SwiperSlide className="swiper-slide">
@@ -83,15 +110,15 @@ function MainPage() {
         <LikeBox>
           <DdayBox>
             <LikeImg src="/img/heart.png" />
-            <Dday> + {meetDate} days</Dday>
+            <LikeNum>좋아요 1234개</LikeNum>
           </DdayBox>
-          <LikeNum>좋아요 1234개</LikeNum>
         </LikeBox>
         <MainMsg>
           iameundori + iamjaeill
           <br />
           <br />
-          " 2021년 10월 16일 "<br />
+          처음 만난지 {meetDate}일.
+          <br />
           오래전 작은인연이 저희를 연인으로 만들었고 <br />
           지금 그 인연으로 저희가 하나가 됩니다.
           <br />
