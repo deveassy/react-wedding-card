@@ -1,6 +1,7 @@
 import React, { Fragment, ChangeEvent, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Pagination, Autoplay, Navigation } from "swiper";
+import Comment from "../../components/Comment";
 
 import "swiper/swiper.scss";
 import "swiper/components/pagination/pagination.scss";
@@ -17,10 +18,6 @@ import {
   WeddingCount,
   LikeNum,
   MainMsg,
-  CommentBox,
-  CommentInput,
-  AddButton,
-  Comment,
   SlideImg,
 } from "./styles";
 
@@ -145,21 +142,7 @@ function MainPage() {
           오셔서 지켜봐주시고 축복해주세요 !
         </MainMsg>
       </FeedBox>
-      <CommentBox>
-        <form>
-          <CommentInput
-            placeholder="댓글을 입력하세요."
-            value={value}
-            onChange={handleChange}
-          />
-          <AddButton>입력</AddButton>
-        </form>
-        <Comment>
-          <p>어머 진짜 결혼하는구나~ 축하해~</p>
-          <p>결혼식때 보자~</p>
-          <p>와 이거 잘만들었다 어디서했어?</p>
-        </Comment>
-      </CommentBox>
+      <Comment />
     </Fragment>
   );
 }

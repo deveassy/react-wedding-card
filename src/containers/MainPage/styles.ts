@@ -79,28 +79,6 @@ const MainMsg = styled.p`
   padding-left: 20px;
 `;
 
-// 댓글
-const CommentBox = styled.div`
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  padding: 0 10px;
-`;
-const CommentInput = styled.input`
-  width: 75vw;
-  padding: 10px;
-  margin-right: 10px;
-  border-radius: 5px;
-`;
-const AddButton = styled.button`
-  padding: 5px;
-`;
-
-const Comment = styled.div`
-  padding: 5px;
-`;
-
 export {
   Container,
   FeedBox,
@@ -114,9 +92,5 @@ export {
   WeddingCount,
   LikeNum,
   MainMsg,
-  CommentBox,
-  CommentInput,
-  AddButton,
-  Comment,
   SlideImg,
 };
