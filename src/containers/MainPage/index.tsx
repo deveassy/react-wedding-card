@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState } from "react";
+import React, { Fragment, ChangeEvent, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Pagination, Autoplay, Navigation } from "swiper";
 
@@ -6,14 +6,13 @@ import "swiper/swiper.scss";
 import "swiper/components/pagination/pagination.scss";
 import "swiper/components/navigation/navigation.scss";
 import {
-  Container,
-  PhotoBox,
-  NameBox,
+  FeedBox,
+  ProfileNameBox,
   ProfileImg,
-  Name,
+  ProfileName,
   LikeBox,
+  LikeImgBtn,
   LikeImg,
-  DdayBox,
   WeddingDay,
   WeddingCount,
   LikeNum,
@@ -36,7 +35,7 @@ const sliders = [
   { src: "/img/groom.jpg", alt: "img3" },
 ];
 
-// type mainProps = {
+// type MainProps = {
 //   time?: any;
 // };
 
@@ -44,6 +43,8 @@ function MainPage() {
   // const { time } = props;
 
   const [value, setValue] = useState("");
+  const [like, setLike] = useState(false);
+  const [count, setCount] = useState(0);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
@@ -70,13 +71,22 @@ function MainPage() {
   const weddingDday =
     (weddingDate.getTime() - todayDate.getTime()) / (1000 * 60 * 60 * 24);
 
+  /**
+   * 좋아요 기능 -> 서버 연결 되면, 사용자가 좋아요버튼을 눌렀는지 확인 후 좋아요 갯수에 반영되도록 코드 수정하기
+   */
+  const handleClick = () => {
+    setLike(!like);
+    setCount(1);
+    if (count === 1) return setCount(0);
+  };
+
   return (
-    <Container>
-      <PhotoBox>
-        <NameBox>
+    <Fragment>
+      <FeedBox>
+        <ProfileNameBox>
           <ProfileImg src="/img/eundol.jpeg" />
-          <Name>iameundori + iamjaeill</Name>
-        </NameBox>
+          <ProfileName>iameundori + iamjaeill</ProfileName>
+        </ProfileNameBox>
         <Swiper
           style={{
             height: "373px",
@@ -108,10 +118,14 @@ function MainPage() {
           })}
         </Swiper>
         <LikeBox>
-          <DdayBox>
-            <LikeImg src="/img/heart.png" />
-            <LikeNum>좋아요 1234개</LikeNum>
-          </DdayBox>
+          <LikeImgBtn onClick={handleClick}>
+            {like === true ? (
+              <LikeImg src="/img/heart.png" />
+            ) : (
+              <LikeImg src="/img/emptyHeart.png" />
+            )}
+          </LikeImgBtn>
+          <LikeNum>좋아요 {count}개</LikeNum>
         </LikeBox>
         <MainMsg>
           iameundori + iamjaeill
@@ -130,7 +144,7 @@ function MainPage() {
           <br />
           오셔서 지켜봐주시고 축복해주세요 !
         </MainMsg>
-      </PhotoBox>
+      </FeedBox>
       <CommentBox>
         <form>
           <CommentInput
@@ -146,7 +160,7 @@ function MainPage() {
           <p>와 이거 잘만들었다 어디서했어?</p>
         </Comment>
       </CommentBox>
-    </Container>
+    </Fragment>
   );
 }
 
