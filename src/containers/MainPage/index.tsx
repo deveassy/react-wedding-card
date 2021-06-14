@@ -114,6 +114,7 @@ function MainPage() {
             );
           })}
         </Swiper>
+        {/* 좋아요 버튼 부분 */}
         <LikeBox>
           <LikeImgBtn onClick={handleClick}>
             {like === true ? (
@@ -124,6 +125,7 @@ function MainPage() {
           </LikeImgBtn>
           <LikeNum>좋아요 {count}개</LikeNum>
         </LikeBox>
+        {/* 메인 메세지 부분 */}
         <MainMsg>
           iameundori + iamjaeill
           <br />
