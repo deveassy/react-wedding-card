@@ -13,6 +13,7 @@ export const TabContainer = styled.div`
 
 export const LogoLinkBox = styled.div`
   position: fixed;
+  z-index: 100;
   top: 0;
   left: 0;
   width: 100vw;
@@ -21,9 +22,8 @@ export const LogoLinkBox = styled.div`
 `;
 
 export const LogoLink = styled(Link)`
-  font-family: "Dancing Script", cursive;
+  font-family: "Kaushan";
   font-size: 1.8em;
-  font-weight: 800;
   text-decoration: none;
   color: #fff;
 `;
