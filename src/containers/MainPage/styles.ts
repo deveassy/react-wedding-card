@@ -1,13 +1,9 @@
 import styled, { css } from "styled-components";
 
-type timeProps = { time?: any };
-
 const FlexDiv = styled.div`
   display: flex;
   align-items: center;
 `;
-
-const Container = styled.div``;
 
 // 피드(프로필이름 + 사진슬라이더 + 좋아요 + 메세지)
 const FeedBox = styled.div`
@@ -53,16 +49,8 @@ const SlideImg = styled.img`
   width: 100%;
   height: 100%;
 `;
-const WeddingDay = styled.h2<timeProps>`
+const WeddingDay = styled.h2`
   position: absolute;
-  /* ${(props) => {
-    if (props.time) {
-      return css`
-        top: 30px;
-      `;
-    }
-    return 0;
-  }}; */
   left: 50%;
   transform: translateX(-50%);
   font-family: "Kaushan";
@@ -79,30 +67,7 @@ const MainMsg = styled.p`
   padding-left: 20px;
 `;
 
-// 댓글
-const CommentBox = styled.div`
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  padding: 0 10px;
-`;
-const CommentInput = styled.input`
-  width: 75vw;
-  padding: 10px;
-  margin-right: 10px;
-  border-radius: 5px;
-`;
-const AddButton = styled.button`
-  padding: 5px;
-`;
-
-const Comment = styled.div`
-  padding: 5px;
-`;
-
 export {
-  Container,
   FeedBox,
   ProfileNameBox,
   ProfileImg,
@@ -114,9 +79,5 @@ export {
   WeddingCount,
   LikeNum,
   MainMsg,
-  CommentBox,
-  CommentInput,
-  AddButton,
-  Comment,
   SlideImg,
 };

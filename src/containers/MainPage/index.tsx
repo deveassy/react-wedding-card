@@ -1,6 +1,7 @@
-import React, { Fragment, ChangeEvent, useState } from "react";
+import React, { Fragment, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Pagination, Autoplay, Navigation } from "swiper";
+import CommentComponent from "../../components/Comment";
 
 import "swiper/swiper.scss";
 import "swiper/components/pagination/pagination.scss";
@@ -17,10 +18,6 @@ import {
   WeddingCount,
   LikeNum,
   MainMsg,
-  CommentBox,
-  CommentInput,
-  AddButton,
-  Comment,
   SlideImg,
 } from "./styles";
 
@@ -35,20 +32,9 @@ const sliders = [
   { src: "/img/groom.jpg", alt: "img3" },
 ];
 
-// type MainProps = {
-//   time?: any;
-// };
-
 function MainPage() {
-  // const { time } = props;
-
-  const [value, setValue] = useState("");
   const [like, setLike] = useState(false);
   const [count, setCount] = useState(0);
-
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setValue(e.target.value);
-  };
 
   const todayDate = new Date();
   todayDate.setHours(0);
@@ -117,6 +103,7 @@ function MainPage() {
             );
           })}
         </Swiper>
+        {/* 좋아요 버튼 부분 */}
         <LikeBox>
           <LikeImgBtn onClick={handleClick}>
             {like === true ? (
@@ -127,6 +114,7 @@ function MainPage() {
           </LikeImgBtn>
           <LikeNum>좋아요 {count}개</LikeNum>
         </LikeBox>
+        {/* 메인 메세지 부분 */}
         <MainMsg>
           iameundori + iamjaeill
           <br />
@@ -145,21 +133,8 @@ function MainPage() {
           오셔서 지켜봐주시고 축복해주세요 !
         </MainMsg>
       </FeedBox>
-      <CommentBox>
-        <form>
-          <CommentInput
-            placeholder="댓글을 입력하세요."
-            value={value}
-            onChange={handleChange}
-          />
-          <AddButton>입력</AddButton>
-        </form>
-        <Comment>
-          <p>어머 진짜 결혼하는구나~ 축하해~</p>
-          <p>결혼식때 보자~</p>
-          <p>와 이거 잘만들었다 어디서했어?</p>
-        </Comment>
-      </CommentBox>
+      {/* 댓글 부분 - 컴포넌트 분리시킴 */}
+      <CommentComponent />
     </Fragment>
   );
 }
