@@ -1,4 +1,4 @@
-import React, { Fragment, ChangeEvent, useState } from "react";
+import React, { Fragment, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Pagination, Autoplay, Navigation } from "swiper";
 import CommentComponent from "../../components/Comment";
@@ -32,20 +32,9 @@ const sliders = [
   { src: "/img/groom.jpg", alt: "img3" },
 ];
 
-// type MainProps = {
-//   time?: any;
-// };
-
 function MainPage() {
-  // const { time } = props;
-
-  const [value, setValue] = useState("");
   const [like, setLike] = useState(false);
   const [count, setCount] = useState(0);
-
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setValue(e.target.value);
-  };
 
   const todayDate = new Date();
   todayDate.setHours(0);

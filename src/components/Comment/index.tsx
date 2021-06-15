@@ -32,7 +32,7 @@ function CommentOutput(props: CommentProps) {
   const { comment } = props;
   return (
     <SingleComment style={{ display: "flex", flexDirection: "row" }}>
-      <User>{comment.user}&nbsp;</User>
+      <User>{comment.user}</User>
       <Text>{comment.text}</Text>
     </SingleComment>
   );
