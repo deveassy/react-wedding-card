@@ -4,31 +4,29 @@ import {
   CommentBox,
   ForUserMsg,
   FormBox,
-  TextInput,
+  NameInput,
+  ContentBox,
+  ContentInput,
   SubmitBtn,
   TweetBox,
   TweetUserName,
   TweetText,
-  TweetDate,
 } from "./styles";
 
 type Tweet = {
   id: number;
   user: string;
   text: string;
-  date: string;
 };
-
 type tweetProps = {
-  tweet: {
-    id: number;
-    user: string;
-    text: string;
-    date: string;
-  };
+  tweet: Tweet;
 };
 
-type AddTweet = (value: string) => void;
+type State = {
+  username: string;
+  content: string;
+};
+type AddTweet = (state: State) => void;
 
 function CommentOutput(props: tweetProps) {
   const { tweet } = props;
@@ -36,7 +34,6 @@ function CommentOutput(props: tweetProps) {
     <TweetBox style={{ display: "flex", flexDirection: "row" }}>
       <TweetUserName>{tweet.user}&nbsp;</TweetUserName>
       <TweetText>{tweet.text}</TweetText>
-      <TweetText>{tweet.date}</TweetText>
     </TweetBox>
   );
 }
@@ -47,53 +44,54 @@ export default function Comment() {
       id: 1,
       user: "이은지",
       text: "기믄솔 결혼축하해~~!!~",
-      date: "2021.06.01",
     },
     {
       id: 2,
       user: "신진아",
       text: "은도리야 추카해~!",
-      date: "2021.06.05",
     },
     {
       id: 3,
       user: "백장미",
       text: "어머머 드디어 진ㅉㅏ루~!!!!!",
-      date: "2021.06.10",
     },
   ];
-
-  const [value, setValue] = useState("");
-  const [tweets, setTweets] = useState(initialTweet);
-
   const nextId = useRef(0);
 
+  const [inputs, setInputs] = useState<State>({
+    username: "",
+    content: "",
+  });
+
+  const [tweets, setTweets] = useState(initialTweet);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setValue(e.target.value);
+    const { name, value } = e.target;
+    setInputs({
+      ...inputs,
+      [name]: value,
+    });
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!value) return null;
-    setValue("");
-    addTweet(value);
+    if (!inputs.username || !inputs.content) return null;
+    addTweet(inputs);
+    setInputs({
+      username: "",
+      content: "",
+    });
   };
 
-  const addTweet: AddTweet = (value) => {
+  const addTweet: AddTweet = (args) => {
+    const { username, content } = args;
     const tweet = {
       id: nextId.current,
-      user: "이은지",
-      text: value,
-      date: new Date().toISOString().slice(0, 10),
+      user: username,
+      text: content,
     };
     setTweets(tweets.concat(tweet));
     nextId.current += 1;
-  };
-
-  const handleKey = (e: React.KeyboardEvent<HTMLButtonElement>) => {
-    if (e.key === "Enter") {
-      addTweet(value);
-    }
   };
 
   return (
@@ -107,14 +105,21 @@ export default function Comment() {
         </ForUserMsg>
       </CommentBox>
       <FormBox onSubmit={handleSubmit}>
-        <TextInput
-          placeholder="댓글 달기..."
-          value={value}
+        <NameInput
+          name="username"
+          placeholder="이름을 넣어주세요"
+          value={inputs.username}
           onChange={handleChange}
         />
-        <SubmitBtn type="submit" onKeyPress={handleKey}>
-          게시
-        </SubmitBtn>
+        <ContentBox>
+          <ContentInput
+            name="content"
+            placeholder="댓글 달기..."
+            value={inputs.content}
+            onChange={handleChange}
+          />
+          <SubmitBtn type="submit">게시</SubmitBtn>
+        </ContentBox>
       </FormBox>
     </Container>
   );

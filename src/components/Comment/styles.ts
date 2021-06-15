@@ -23,7 +23,18 @@ const ForUserMsg = styled.div`
   font-size: 0.8em;
 `;
 
-const FormBox = styled.form`
+const FormBox = styled.form``;
+
+const NameInput = styled.input`
+  width: 40vw;
+  padding: 10px 25px;
+  margin-bottom: 5px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  outline: none;
+`;
+
+const ContentBox = styled.div`
   justify-content: space-between;
   width: 85vw;
   padding: 5px 15px;
@@ -32,7 +43,7 @@ const FormBox = styled.form`
   border-radius: 30px;
 `;
 
-const TextInput = styled.input`
+const ContentInput = styled.input`
   width: 70vw;
   padding: 10px;
   border: none;
@@ -64,20 +75,16 @@ const TweetText = styled.p`
   margin: 0;
 `;
 
-const TweetDate = styled.p`
-  margin: 0 0 0 20px;
-  color: #999;
-`;
-
 export {
   Container,
   CommentBox,
   ForUserMsg,
   FormBox,
-  TextInput,
+  NameInput,
+  ContentBox,
+  ContentInput,
   SubmitBtn,
   TweetBox,
   TweetUserName,
   TweetText,
-  TweetDate,
 };
