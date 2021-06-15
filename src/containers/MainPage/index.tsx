@@ -1,7 +1,7 @@
 import React, { Fragment, ChangeEvent, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Pagination, Autoplay, Navigation } from "swiper";
-import Comment from "../../components/Comment";
+import CommentComponent from "../../components/Comment";
 
 import "swiper/swiper.scss";
 import "swiper/components/pagination/pagination.scss";
@@ -144,7 +144,8 @@ function MainPage() {
           오셔서 지켜봐주시고 축복해주세요 !
         </MainMsg>
       </FeedBox>
-      <Comment />
+      {/* 댓글 부분 - 컴포넌트 분리시킴 */}
+      <CommentComponent />
     </Fragment>
   );
 }

@@ -8,38 +8,38 @@ import {
   ContentBox,
   ContentInput,
   SubmitBtn,
-  TweetBox,
-  TweetUserName,
-  TweetText,
+  SingleComment,
+  User,
+  Text,
 } from "./styles";
 
-type Tweet = {
+type Comment = {
   id: number;
   user: string;
   text: string;
 };
-type tweetProps = {
-  tweet: Tweet;
+type CommentProps = {
+  comment: Comment;
 };
 
-type State = {
+type InputState = {
   username: string;
   content: string;
 };
-type AddTweet = (state: State) => void;
+type AddComment = (state: InputState) => void;
 
-function CommentOutput(props: tweetProps) {
-  const { tweet } = props;
+function CommentOutput(props: CommentProps) {
+  const { comment } = props;
   return (
-    <TweetBox style={{ display: "flex", flexDirection: "row" }}>
-      <TweetUserName>{tweet.user}&nbsp;</TweetUserName>
-      <TweetText>{tweet.text}</TweetText>
-    </TweetBox>
+    <SingleComment style={{ display: "flex", flexDirection: "row" }}>
+      <User>{comment.user}&nbsp;</User>
+      <Text>{comment.text}</Text>
+    </SingleComment>
   );
 }
 
-export default function Comment() {
-  const initialTweet: Tweet[] = [
+export default function CommentComponent() {
+  const initialTweet: Comment[] = [
     {
       id: 1,
       user: "이은지",
@@ -58,12 +58,12 @@ export default function Comment() {
   ];
   const nextId = useRef(0);
 
-  const [inputs, setInputs] = useState<State>({
+  const [inputs, setInputs] = useState<InputState>({
     username: "",
     content: "",
   });
 
-  const [tweets, setTweets] = useState(initialTweet);
+  const [comments, setComments] = useState<Comment[]>(initialTweet);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -83,22 +83,22 @@ export default function Comment() {
     });
   };
 
-  const addTweet: AddTweet = (args) => {
+  const addTweet: AddComment = (args) => {
     const { username, content } = args;
-    const tweet = {
+    const comment = {
       id: nextId.current,
       user: username,
       text: content,
     };
-    setTweets(tweets.concat(tweet));
+    setComments(comments.concat(comment));
     nextId.current += 1;
   };
 
   return (
     <Container>
       <CommentBox>
-        {tweets.map((tweet) => {
-          return <CommentOutput key={tweet.id} tweet={tweet} />;
+        {comments.map((comment) => {
+          return <CommentOutput key={comment.id} comment={comment} />;
         })}
         <ForUserMsg>
           신랑,신부에게 축하의 메세지를 남겨주세요! (게시 후엔 삭제 불가능)

@@ -58,7 +58,7 @@ const SubmitBtn = styled.button`
 `;
 
 // comment 부분 스타일링
-const TweetBox = styled.div`
+const SingleComment = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -66,12 +66,12 @@ const TweetBox = styled.div`
   margin: 0 10px;
 `;
 
-const TweetUserName = styled.p`
+const User = styled.p`
   font-weight: 800;
   margin: 0;
 `;
 
-const TweetText = styled.p`
+const Text = styled.p`
   margin: 0;
 `;
 
@@ -84,7 +84,7 @@ export {
   ContentBox,
   ContentInput,
   SubmitBtn,
-  TweetBox,
-  TweetUserName,
-  TweetText,
+  SingleComment,
+  User,
+  Text,
 };
