@@ -1,10 +1,13 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
 
 import { GlobalStyle } from "./globals/styles.js";
 import RootRoute from "./routes";
 import { createStore } from "redux";
-import { Provider } from "react-redux";
+import { Provider, useDispatch } from "react-redux";
 import rootReducer from "./modules";
+import { updatePost } from "./modules/post";
+
+import postMock from "./mocks/post.json";
 
 const store = createStore(rootReducer);
 
@@ -13,6 +16,11 @@ const store = createStore(rootReducer);
  * - 글로벌 스타일 적용
  */
 function RenderApp() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    // dispatch({ type: "UPDATE_POST", payload: postMock });
+    dispatch(updatePost(postMock));
+  }, [dispatch]);
   return (
     <Fragment>
       {/* 글로벌 스타일 정의 */}
