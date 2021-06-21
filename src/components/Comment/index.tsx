@@ -79,8 +79,8 @@ export default function CommentComponent(props: commentStateProps) {
   return (
     <Container>
       <CommentBox>
-        {comments.map((comment) => {
-          return <CommentOutput key={comment.name} comment={comment} />;
+        {comments.map((comment, index) => {
+          return <CommentOutput key={index} comment={comment} />;
         })}
         <ForUserMsg>
           신랑,신부에게 축하의 메세지를 남겨주세요! (게시 후엔 삭제 불가능)

@@ -54,7 +54,7 @@ function SwiperComponent() {
         </SwiperSlide>
         {sliders.map((slider) => {
           return (
-            <SwiperSlide className="swiper-slide">
+            <SwiperSlide className="swiper-slide" key={slider.src}>
               <SlideImg src={slider.src} alt={slider.alt} />
             </SwiperSlide>
           );

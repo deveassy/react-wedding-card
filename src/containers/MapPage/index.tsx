@@ -60,7 +60,7 @@ function MapPage() {
         map.setCenter(coords);
       }
     });
-  }, []);
+  }, [location]);
 
   return (
     <PageContainer>
