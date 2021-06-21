@@ -1,13 +1,22 @@
-import React, { Fragment } from "react";
-
+import React, { Fragment, useEffect } from "react";
 import { GlobalStyle } from "./globals/styles.js";
 import RootRoute from "./routes";
 
-/**
- * 앱의 랜더에 필요한 설정 적용
- * - 글로벌 스타일 적용
- */
+import { createStore } from "redux";
+import { Provider, useDispatch } from "react-redux";
+import rootReducer from "./modules";
+// import { updatePost } from "./modules/post";
+
+import postMock from "./mocks/post.json";
+
+const store = createStore(rootReducer);
+
 function RenderApp() {
+  // const dispatch = useDispatch();
+  // useEffect(() => {
+  //   dispatch(updatePost(postMock as PostTypes));
+  // }, [dispatch]);
+
   return (
     <Fragment>
       {/* 글로벌 스타일 정의 */}
@@ -19,7 +28,11 @@ function RenderApp() {
 }
 
 function App() {
-  return <RenderApp />;
+  return (
+    <Provider store={store}>
+      <RenderApp />
+    </Provider>
+  );
 }
 
 export default App;

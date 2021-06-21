@@ -13,13 +13,8 @@ import {
   Text,
 } from "./styles";
 
-type Comment = {
-  id: number;
-  user: string;
-  text: string;
-};
 type CommentProps = {
-  comment: Comment;
+  comment: comment;
 };
 
 type InputState = {
@@ -27,6 +22,10 @@ type InputState = {
   content: string;
 };
 type AddComment = (state: InputState) => void;
+
+type commentStateProps = {
+  comments: comment[];
+};
 
 function CommentOutput(props: CommentProps) {
   const { comment } = props;
@@ -38,24 +37,9 @@ function CommentOutput(props: CommentProps) {
   );
 }
 
-export default function CommentComponent() {
-  const initialTweet: Comment[] = [
-    {
-      id: 1,
-      user: "이은지",
-      text: "기믄솔 결혼축하해~~!!~",
-    },
-    {
-      id: 2,
-      user: "신진아",
-      text: "은도리야 추카해~!",
-    },
-    {
-      id: 3,
-      user: "백장미",
-      text: "어머머 드디어 진ㅉㅏ루~!!!!!",
-    },
-  ];
+export default function CommentComponent(props: commentStateProps) {
+  const { comments } = props;
+
   const nextId = useRef(0);
 
   const [inputs, setInputs] = useState<InputState>({
@@ -63,7 +47,7 @@ export default function CommentComponent() {
     content: "",
   });
 
-  const [comments, setComments] = useState<Comment[]>(initialTweet);
+  const [tweet, setTweet] = useState<comment[]>(comments);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -90,14 +74,14 @@ export default function CommentComponent() {
       user: username,
       text: content,
     };
-    setComments(comments.concat(comment));
+    setTweet(tweet.concat(comment));
     nextId.current += 1;
   };
 
   return (
     <Container>
       <CommentBox>
-        {comments.map((comment) => {
+        {tweet.map((comment) => {
           return <CommentOutput key={comment.id} comment={comment} />;
         })}
         <ForUserMsg>
