@@ -1,4 +1,6 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addComment } from "../../modules/post";
 import {
   Container,
   CommentBox,
@@ -13,10 +15,6 @@ import {
   Text,
 } from "./styles";
 
-type CommentProps = {
-  comment: comment;
-};
-
 type InputState = {
   username: string;
   content: string;
@@ -24,14 +22,18 @@ type InputState = {
 type AddComment = (state: InputState) => void;
 
 type commentStateProps = {
-  comments: comment[];
+  comments: CommentType[];
 };
 
-function CommentOutput(props: CommentProps) {
+type commentOutputProps = {
+  comment: CommentType;
+};
+
+function CommentOutput(props: commentOutputProps) {
   const { comment } = props;
   return (
     <SingleComment style={{ display: "flex", flexDirection: "row" }}>
-      <User>{comment.user}</User>
+      <User>{comment.name}</User>
       <Text>{comment.text}</Text>
     </SingleComment>
   );
@@ -40,14 +42,10 @@ function CommentOutput(props: CommentProps) {
 export default function CommentComponent(props: commentStateProps) {
   const { comments } = props;
 
-  const nextId = useRef(0);
-
   const [inputs, setInputs] = useState<InputState>({
     username: "",
     content: "",
   });
-
-  const [tweet, setTweet] = useState<comment[]>(comments);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -67,22 +65,22 @@ export default function CommentComponent(props: commentStateProps) {
     });
   };
 
+  const dispatch = useDispatch();
+
   const addTweet: AddComment = (args) => {
     const { username, content } = args;
     const comment = {
-      id: nextId.current,
-      user: username,
+      name: username,
       text: content,
     };
-    setTweet(tweet.concat(comment));
-    nextId.current += 1;
+    dispatch(addComment(comment));
   };
 
   return (
     <Container>
       <CommentBox>
-        {tweet.map((comment) => {
-          return <CommentOutput key={comment.id} comment={comment} />;
+        {comments.map((comment) => {
+          return <CommentOutput key={comment.name} comment={comment} />;
         })}
         <ForUserMsg>
           신랑,신부에게 축하의 메세지를 남겨주세요! (게시 후엔 삭제 불가능)

@@ -17,6 +17,7 @@ function LikeComponent(props: LikeProps) {
     if (like === false) return dispatch(addLike());
     if (like === true) return null;
   };
+
   return (
     <LikeBox>
       <LikeImgBtn onClick={handleClick}>

@@ -5,17 +5,17 @@ import RootRoute from "./routes";
 import { createStore } from "redux";
 import { Provider, useDispatch } from "react-redux";
 import rootReducer from "./modules";
-// import { updatePost } from "./modules/post";
+import { updatePost } from "./modules/post";
 
 import postMock from "./mocks/post.json";
 
 const store = createStore(rootReducer);
 
 function RenderApp() {
-  // const dispatch = useDispatch();
-  // useEffect(() => {
-  //   dispatch(updatePost(postMock as PostTypes));
-  // }, [dispatch]);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(updatePost(postMock as PostTypes));
+  }, [dispatch]);
 
   return (
     <Fragment>

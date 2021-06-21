@@ -5,6 +5,12 @@ const FlexDiv = styled.div`
   align-items: center;
 `;
 
+const Loader = styled(FlexDiv)`
+  justify-content: center;
+  margin-top: 200px;
+  font-size: 30px;
+`;
+
 // 피드(프로필이름 + 사진슬라이더 + 좋아요 + 메세지)
 const FeedBox = styled.div`
   margin-bottom: 10px;
@@ -30,4 +36,4 @@ const MainMsg = styled.p`
   padding-left: 20px;
 `;
 
-export { FeedBox, ProfileNameBox, ProfileImg, ProfileName, MainMsg };
+export { Loader, FeedBox, ProfileNameBox, ProfileImg, ProfileName, MainMsg };

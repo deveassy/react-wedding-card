@@ -5,12 +5,14 @@ import SwiperComponent from "../../components/Swiper";
 import LikeComponent from "../../components/Like";
 
 import {
+  Loader,
   FeedBox,
   ProfileNameBox,
   ProfileImg,
   ProfileName,
   MainMsg,
 } from "./styles";
+import { RootState } from "../../modules";
 
 function MainPage() {
   const todayDate = new Date();
@@ -26,10 +28,9 @@ function MainPage() {
     (todayDate.getTime() - anniversaryDate.getTime()) / (1000 * 60 * 60 * 24) +
     1;
 
-  const { likes, comments } = useSelector((state) => ({
-    likes: state.postReducer.likes,
-    comments: state.postReducer.comments,
-  }));
+  const post = useSelector((state: RootState) => state.postReducer);
+
+  if (!post) return <Loader>loading...</Loader>;
 
   return (
     <Fragment>
@@ -41,7 +42,7 @@ function MainPage() {
         {/* 사진 스와이퍼 부분 */}
         <SwiperComponent />
         {/* 좋아요 버튼 부분 */}
-        <LikeComponent likes={likes} />
+        <LikeComponent likes={post.likes} />
         {/* 메인 메세지 부분 */}
         <MainMsg>
           iameundori + iamjaeill
@@ -61,8 +62,8 @@ function MainPage() {
           오셔서 지켜봐주시고 축복해주세요 !
         </MainMsg>
       </FeedBox>
-      {/* 댓글 부분 - 컴포넌트 분리시킴 */}
-      <CommentComponent comments={comments} />
+      {/* 댓글 부분 */}
+      <CommentComponent comments={post.comments} />
     </Fragment>
   );
 }
