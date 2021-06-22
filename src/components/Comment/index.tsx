@@ -33,7 +33,7 @@ function CommentOutput(props: CommentOutputProps) {
   const { comment } = props;
   return (
     <SingleComment style={{ display: "flex", flexDirection: "row" }}>
-      <User>{comment.name}</User>
+      <User>{comment.username}</User>
       <Text>{comment.text}</Text>
     </SingleComment>
   );
@@ -70,10 +70,24 @@ export default function CommentComponent(props: CommentStateProps) {
   const addTweet: AddComment = (args) => {
     const { username, content } = args;
     const comment = {
-      name: username,
+      postId: "v6subHi6XYmqJn6xypq2",
+      username: username,
       text: content,
     };
-    dispatch(addComment(comment));
+    fetch("https://us-central1-enoveh-toy.cloudfunctions.net/addComment", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(comment),
+    })
+      .then((response) => response.json())
+      .then((json) => {
+        console.log(json);
+        if (json.status === 200) {
+          dispatch(addComment(comment));
+        }
+      });
   };
 
   return (

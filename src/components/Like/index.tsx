@@ -15,7 +15,22 @@ function LikeComponent(props: LikeProps) {
   const handleClick = (): void => {
     if (like) return;
     setLike(true);
-    dispatch(addLike());
+    fetch("https://us-central1-enoveh-toy.cloudfunctions.net/addLike", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        postId: "v6subHi6XYmqJn6xypq2",
+      }),
+    })
+      .then((response) => response.json())
+      .then((json) => {
+        console.log(json);
+        if (json.status === 200) {
+          dispatch(addLike());
+        }
+      });
   };
 
   return (

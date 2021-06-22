@@ -74,6 +74,7 @@ const User = styled.p`
 
 const Text = styled.p`
   margin: 0;
+  margin-right: 5px;
 `;
 
 export {
