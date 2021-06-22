@@ -4,6 +4,7 @@ import { addComment } from "../../modules/post";
 import {
   Container,
   CommentBox,
+  FolderSpan,
   ForUserMsg,
   FormBox,
   NameInput,
@@ -47,6 +48,8 @@ export default function CommentComponent(props: CommentStateProps) {
     content: "",
   });
 
+  const [visible, setVisible] = useState(false);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setInputs({
@@ -76,12 +79,23 @@ export default function CommentComponent(props: CommentStateProps) {
     dispatch(addComment(comment));
   };
 
+  const count = comments.length;
+
+  const handleFolder = () => {
+    setVisible(!visible);
+  };
+
   return (
     <Container>
       <CommentBox>
-        {comments.map((comment, index) => {
-          return <CommentOutput key={index} comment={comment} />;
-        })}
+        <FolderSpan onClick={handleFolder}>
+          댓글 {count}개 {visible ? "접기" : "모두 보기"}
+        </FolderSpan>
+        {visible
+          ? comments.map((comment, index) => {
+              return <CommentOutput key={index} comment={comment} />;
+            })
+          : null}
         <ForUserMsg>
           신랑,신부에게 축하의 메세지를 남겨주세요! (게시 후엔 삭제 불가능)
         </ForUserMsg>
