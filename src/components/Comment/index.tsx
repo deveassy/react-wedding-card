@@ -33,7 +33,7 @@ function CommentOutput(props: CommentOutputProps) {
   const { comment } = props;
   return (
     <SingleComment style={{ display: "flex", flexDirection: "row" }}>
-      <User>{comment.name}</User>
+      <User>{comment.username}</User>
       <Text>{comment.text}</Text>
     </SingleComment>
   );
@@ -70,10 +70,21 @@ export default function CommentComponent(props: CommentStateProps) {
   const addTweet: AddComment = (args) => {
     const { username, content } = args;
     const comment = {
-      name: username,
+      postId: "v6subHi6XYmqJn6xypq2",
+      username: username,
       text: content,
     };
-    dispatch(addComment(comment));
+    fetch("http://localhost:5001/enoveh-toy/us-central1/addComment", {
+      method: "POST",
+      body: JSON.stringify(comment),
+    })
+      .then((res) => res.json())
+      .then((json) => {
+        console.log("댓글 결과", json);
+        if (json.status === 200) {
+          dispatch(addComment(comment));
+        }
+      });
   };
 
   return (

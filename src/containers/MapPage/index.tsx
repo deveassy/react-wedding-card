@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
+import { RootState } from "../../modules";
 import {
   PageContainer,
   MapMsg,
@@ -20,15 +21,16 @@ declare global {
 const { kakao } = window;
 
 function MapPage() {
-  const { location } = useSelector((state) => ({
-    location: state.postReducer.location,
-  }));
+  const post = useSelector((state: RootState) => state.postReducer);
 
   useEffect(() => {
     // create map
     const container = document.getElementById("kakaomap");
     const options = {
-      center: new kakao.maps.LatLng(location._latitude, location._longitude),
+      center: new kakao.maps.LatLng(
+        post?.location._latitude || 37.73111593924737,
+        post?.location._longitude || 126.4753500759531
+      ),
       level: 3,
     };
     const map = new kakao.maps.Map(container, options);
@@ -36,31 +38,33 @@ function MapPage() {
     // create address-coordinates change obj
     const geocoder = new kakao.maps.services.Geocoder();
     // research coordinates from address
-    geocoder.addressSearch("인천 강화군 강화읍 충렬사로 138", function (
-      result: any,
-      status: any
-    ) {
-      if (status === kakao.maps.services.Status.OK) {
-        var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+    geocoder.addressSearch(
+      "인천 강화군 강화읍 충렬사로 138",
+      function (result: any, status: any) {
+        if (status === kakao.maps.services.Status.OK) {
+          var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
 
-        // indication marker
-        var marker = new kakao.maps.Marker({
-          map: map,
-          position: coords,
-        });
+          // indication marker
+          var marker = new kakao.maps.Marker({
+            map: map,
+            position: coords,
+          });
 
-        // custom location info
-        var infowindow = new kakao.maps.InfoWindow({
-          content:
-            '<div style="width:150px;text-align:center;padding:6px 0;">은솔&재일 결혼식장</div>',
-        });
-        infowindow.open(map, marker);
+          // custom location info
+          var infowindow = new kakao.maps.InfoWindow({
+            content:
+              '<div style="width:150px;text-align:center;padding:6px 0;">은솔&재일 결혼식장</div>',
+          });
+          infowindow.open(map, marker);
 
-        // move to center
-        map.setCenter(coords);
+          // move to center
+          map.setCenter(coords);
+        }
       }
-    });
-  }, [location]);
+    );
+  }, [post?.location]);
+
+  if (!post) return <p>Loading...</p>;
 
   return (
     <PageContainer>

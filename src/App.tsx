@@ -14,7 +14,17 @@ const store = createStore(rootReducer);
 function RenderApp() {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(updatePost(postMock as PostTypes));
+    const postId = "v6subHi6XYmqJn6xypq2";
+    fetch(
+      `http://localhost:5001/enoveh-toy/us-central1/getPost?postId=${postId}`
+    )
+      .then((response) => response.json())
+      .then((json) => {
+        console.log("결과!!", json);
+        if (json.status === 200) {
+          dispatch(updatePost(json.result as PostTypes));
+        }
+      });
   }, [dispatch]);
 
   return (

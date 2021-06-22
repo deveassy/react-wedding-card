@@ -19,5 +19,5 @@ type PostTypes = {
 
 type CommentType = {
   text: string;
-  name: string;
+  username: string;
 };
