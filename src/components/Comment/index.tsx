@@ -21,15 +21,15 @@ type InputState = {
 };
 type AddComment = (state: InputState) => void;
 
-type commentStateProps = {
+type CommentStateProps = {
   comments: CommentType[];
 };
 
-type commentOutputProps = {
+type CommentOutputProps = {
   comment: CommentType;
 };
 
-function CommentOutput(props: commentOutputProps) {
+function CommentOutput(props: CommentOutputProps) {
   const { comment } = props;
   return (
     <SingleComment style={{ display: "flex", flexDirection: "row" }}>
@@ -39,7 +39,7 @@ function CommentOutput(props: commentOutputProps) {
   );
 }
 
-export default function CommentComponent(props: commentStateProps) {
+export default function CommentComponent(props: CommentStateProps) {
   const { comments } = props;
 
   const [inputs, setInputs] = useState<InputState>({
