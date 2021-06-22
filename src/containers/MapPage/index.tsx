@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { useSelector } from "react-redux";
 import {
   PageContainer,
   MapMsg,
@@ -19,11 +20,15 @@ declare global {
 const { kakao } = window;
 
 function MapPage() {
+  const { location } = useSelector((state) => ({
+    location: state.postReducer.location,
+  }));
+
   useEffect(() => {
     // create map
     const container = document.getElementById("kakaomap");
     const options = {
-      center: new kakao.maps.LatLng(37.731031916277374, 126.4757658840934),
+      center: new kakao.maps.LatLng(location._latitude, location._longitude),
       level: 3,
     };
     const map = new kakao.maps.Map(container, options);
@@ -55,7 +60,7 @@ function MapPage() {
         map.setCenter(coords);
       }
     });
-  }, []);
+  }, [location]);
 
   return (
     <PageContainer>

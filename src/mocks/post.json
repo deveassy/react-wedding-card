@@ -1,0 +1,33 @@
+{
+  "createdAt": "2021-06-12T13:28:44.088Z",
+  "comments": [
+    {
+      "id": "W9W7W1DKXjvNyGR1DYan",
+      "text": "comment test2",
+      "name": "name test2",
+      "createdAt": "2021-06-12T14:06:18.159Z"
+    },
+    {
+      "id": "5ZlHenQSs9kUzr65C0et",
+      "text": "comment test",
+      "createdAt": "2021-06-12T14:07:30.258Z"
+    },
+    {
+      "id": "Eo2Gg1tGlxxDDX5CG57Q",
+      "text": "comment test2222",
+      "name": "-",
+      "createdAt": "2021-06-12T14:14:35.397Z"
+    },
+    {
+      "id": "F47WjJtDJZkCyBnX93dX",
+      "text": "comment test11",
+      "name": "-",
+      "createdAt": "2021-06-12T15:28:27.103Z"
+    }
+  ],
+  "likes": 8,
+  "location": {
+    "_latitude": 37.73111593924737,
+    "_longitude": 126.4753500759531
+  }
+}
