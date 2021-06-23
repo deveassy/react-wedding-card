@@ -3,6 +3,7 @@ import {
   TabContainer,
   LogoLinkBox,
   LogoLink,
+  LogoImg,
   StoryLinkBox,
   StoryImg,
   StoryLink,
@@ -17,7 +18,9 @@ export default function Header() {
   return (
     <TabContainer>
       <LogoLinkBox>
-        <LogoLink to={paths.main}>Doristagram</LogoLink>
+        <LogoLink to={paths.main}>
+          <LogoImg src="/img/logo.png" />
+        </LogoLink>
       </LogoLinkBox>
       <StoryLinkBox>
         <StoryLink to={paths.groom}>

@@ -8,7 +8,7 @@ export const FlexDiv = styled.div`
 
 export const TabContainer = styled.div`
   position: relative;
-  padding-top: 80px;
+  padding-top: 60px;
 `;
 
 export const LogoLinkBox = styled.div`
@@ -17,15 +17,17 @@ export const LogoLinkBox = styled.div`
   top: 0;
   left: 0;
   width: 100vw;
-  padding: 15px;
-  background: linear-gradient(to top left, yellow, orange, #cc0e74, purple);
+  background-color: #fff;
+  /* background: linear-gradient(to top left, yellow, orange, #cc0e74, purple); */
 `;
 
 export const LogoLink = styled(Link)`
-  font-family: "Kaushan";
-  font-size: 1.8em;
-  text-decoration: none;
-  color: #fff;
+  width: 100vw;
+`;
+
+export const LogoImg = styled.img`
+  width: 200px;
+  margin-top: 10px;
 `;
 
 export const StoryLinkBox = styled(FlexDiv)`
