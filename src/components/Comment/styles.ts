@@ -67,7 +67,7 @@ const SingleComment = styled.div`
 `;
 
 const User = styled.p`
-  font-weight: 800;
+  font-weight: bold;
   margin: 0;
   margin-right: 5px;
 `;

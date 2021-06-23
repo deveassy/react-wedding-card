@@ -30,6 +30,7 @@ const ProfileImg = styled.img`
 `;
 const ProfileName = styled.p`
   font-size: 1em;
+  font-weight: bold;
 `;
 
 const MainMsg = styled.p`
