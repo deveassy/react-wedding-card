@@ -15,10 +15,8 @@ export const LogoLinkBox = styled.div`
   position: fixed;
   z-index: 100;
   top: 0;
-  left: 0;
   width: 100vw;
   background-color: #fff;
-  /* background: linear-gradient(to top left, yellow, orange, #cc0e74, purple); */
 `;
 
 export const LogoLink = styled(Link)`

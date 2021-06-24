@@ -1,5 +1,12 @@
 import styled from "styled-components";
 
+const SwiperContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 373px;
+`;
+
 const SlideImg = styled.img`
   width: 100%;
   height: 100%;
@@ -11,7 +18,7 @@ const WeddingDay = styled.p`
   margin: 0;
   transform: translateX(-50%);
   font-family: "East Sea Dokdo";
-  font-size: 2.5em;
+  font-size: 2.3em;
   color: #766161;
 `;
 const WeddingCount = styled.p`
@@ -26,4 +33,4 @@ const WeddingCount = styled.p`
   color: #a0937d;
 `;
 
-export { SlideImg, WeddingDay, WeddingCount };
+export { SwiperContainer, SlideImg, WeddingDay, WeddingCount };

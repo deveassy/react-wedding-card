@@ -19,8 +19,16 @@ export const GlobalStyle = createGlobalStyle`
     src: url(${Lato}) format("truetype");
   }
 
+  @font-face {
+    font-family: 'SLEIGothicTTF';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.0/SLEIGothicTTF.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
- margin: 0;
+  width: 373px;
+  margin: 0 auto;
   font-family: "Lato";
 }
 `;

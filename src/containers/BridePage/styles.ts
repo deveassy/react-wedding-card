@@ -53,7 +53,13 @@ const AccountNum = styled.input`
 `;
 
 const CopyButton = styled.button`
+  position: absolute;
+  right: 50px;
   margin-left: 10px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  background-color: transparent;
 `;
 
 export {

@@ -13,6 +13,7 @@ import {
 
 function BridePage() {
   const [modalOpen, setModalOpen] = useState(false);
+  const [copy, setCopy] = useState("복사");
 
   const openModal = () => {
     setModalOpen(true);
@@ -27,7 +28,7 @@ function BridePage() {
     obj.select(); //인풋 컨트롤의 내용 전체 선택
     document.execCommand("copy"); //복사
     obj.setSelectionRange(0, 0); //선택영역 초기화
-    alert("copy right!");
+    setCopy("완료!");
   };
   return (
     <Container>
@@ -57,7 +58,7 @@ function BridePage() {
             value="우리 123456700"
             readOnly
           />
-          <CopyButton onClick={handleCopy}>복사</CopyButton>
+          <CopyButton onClick={handleCopy}>{copy}</CopyButton>
         </Modal>
       </AccountBox>
     </Container>

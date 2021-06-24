@@ -45,11 +45,12 @@ const OpenModal = styled.section<OpenModalProps>`
 const ModalHeader = styled.header`
   position: relative;
   padding: 16px 64px 16px 16px;
-  background-color: #f1f1f1;
+  background-color: #ecdbba;
   font-weight: 700;
 `;
 
 const ModalMain = styled.main`
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -66,7 +67,7 @@ const ModalFooter = styled.footer`
 const CloseButton = styled.button`
   padding: 6px 12px;
   color: #fff;
-  background-color: #6c757d;
+  background-color: #687980;
   border-radius: 5px;
   font-size: 13px;
 `;

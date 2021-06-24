@@ -1,10 +1,13 @@
 import styled from "styled-components";
 
-const Container = styled.div`
+const FlexDiv = styled.div`
   display: flex;
+  align-items: center;
+`;
+
+const Container = styled(FlexDiv)`
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   padding: 10px;
 `;
 
@@ -21,10 +24,7 @@ const GroomMsg = styled.p`
   font-size: 1.2em;
 `;
 
-const AccountBox = styled.div`
-  display: flex;
-  align-items: center;
-`;
+const AccountBox = styled(FlexDiv)``;
 
 const AccountButton = styled.button`
   width: 70px;
@@ -53,7 +53,13 @@ const AccountNum = styled.input`
 `;
 
 const CopyButton = styled.button`
+  position: absolute;
+  right: 50px;
   margin-left: 10px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  background-color: transparent;
 `;
 
 export {
