@@ -22,12 +22,12 @@ const ModalContainer = styled.div<ModalContainerProps>`
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 99;
+  z-index: 100;
   background-color: rgba(0, 0, 0, 0.6);
 `;
 
 const OpenModal = styled.section<OpenModalProps>`
-  width: 90%;
+  width: 330px;
   max-width: 450px;
   margin: 0 auto;
   border-radius: 0.3rem;

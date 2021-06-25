@@ -1,11 +1,33 @@
 import styled from "styled-components";
 
-const Container = styled.div`
+const FlexDiv = styled.div`
   display: flex;
+  align-items: center;
+`;
+
+const Container = styled(FlexDiv)`
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   padding: 10px;
+`;
+
+const ProfileNameBox = styled(FlexDiv)`
+  flex-direction: row;
+  width: 100%;
+  margin-left: 15px;
+`;
+
+const ProfileImg = styled.img`
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  margin-right: 10px;
+`;
+
+const ProfileName = styled.p`
+  font-size: 1em;
+  font-weight: bold;
 `;
 
 const BrideImg = styled.img`
@@ -18,13 +40,11 @@ const BrideImg = styled.img`
 
 const BrideMsg = styled.p`
   margin: 10px;
+  font-family: "TDTDTadakTadak";
   font-size: 1.2em;
 `;
 
-const AccountBox = styled.div`
-  display: flex;
-  align-items: center;
-`;
+const AccountBox = styled(FlexDiv)``;
 
 const AccountButton = styled.button`
   width: 70px;
@@ -64,6 +84,9 @@ const CopyButton = styled.button`
 
 export {
   Container,
+  ProfileNameBox,
+  ProfileImg,
+  ProfileName,
   BrideImg,
   BrideMsg,
   AccountMsg,

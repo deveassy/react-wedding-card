@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import Modal from "../../components/Modal";
 import {
   Container,
+  ProfileNameBox,
+  ProfileImg,
+  ProfileName,
   GroomImg,
   GroomMsg,
   AccountMsg,
@@ -33,6 +36,10 @@ function GroomPage() {
 
   return (
     <Container>
+      <ProfileNameBox>
+        <ProfileImg src="/img/eundol.jpeg" />
+        <ProfileName>iamjaeill</ProfileName>
+      </ProfileNameBox>
       <GroomImg src="/img/groom.jpg" />
       <GroomMsg>
         안녕하세요. <br />

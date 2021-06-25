@@ -13,7 +13,7 @@ export const TabContainer = styled.div`
 
 export const LogoLinkBox = styled.div`
   position: fixed;
-  z-index: 100;
+  z-index: 99;
   top: 0;
   width: 100vw;
   background-color: #fff;

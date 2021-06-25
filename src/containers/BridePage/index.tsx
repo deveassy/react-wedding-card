@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import Modal from "../../components/Modal";
 import {
   Container,
+  ProfileNameBox,
+  ProfileImg,
+  ProfileName,
   BrideImg,
   BrideMsg,
   AccountMsg,
@@ -32,6 +35,10 @@ function BridePage() {
   };
   return (
     <Container>
+      <ProfileNameBox>
+        <ProfileImg src="/img/eundol.jpeg" />
+        <ProfileName>iameundori</ProfileName>
+      </ProfileNameBox>
       <BrideImg src="/img/bride.jpg" />
       <BrideMsg>
         안녕하세요. <br />
@@ -52,12 +59,8 @@ function BridePage() {
           close={closeModal}
           header="계좌번호 보기"
         >
-          <AccountNum
-            type="text"
-            id="numInput"
-            value="우리 123456700"
-            readOnly
-          />
+          <p>우리</p>
+          <AccountNum type="text" id="numInput" value="123456700" readOnly />
           <CopyButton onClick={handleCopy}>{copy}</CopyButton>
         </Modal>
       </AccountBox>

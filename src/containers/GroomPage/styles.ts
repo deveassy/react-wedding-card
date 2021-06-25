@@ -11,6 +11,25 @@ const Container = styled(FlexDiv)`
   padding: 10px;
 `;
 
+const ProfileNameBox = styled(FlexDiv)`
+  flex-direction: row;
+  width: 100%;
+  margin-left: 15px;
+`;
+
+const ProfileImg = styled.img`
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  margin-right: 10px;
+`;
+
+const ProfileName = styled.p`
+  font-size: 1em;
+  font-weight: bold;
+`;
+
 const GroomImg = styled.img`
   width: 250px;
   height: 250px;
@@ -21,7 +40,8 @@ const GroomImg = styled.img`
 
 const GroomMsg = styled.p`
   margin: 10px;
-  font-size: 1.2em;
+  font-family: "KimNamyun";
+  font-size: 1.4em;
 `;
 
 const AccountBox = styled(FlexDiv)``;
@@ -64,6 +84,9 @@ const CopyButton = styled.button`
 
 export {
   Container,
+  ProfileNameBox,
+  ProfileImg,
+  ProfileName,
   GroomImg,
   GroomMsg,
   AccountMsg,
