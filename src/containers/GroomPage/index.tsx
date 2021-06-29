@@ -60,12 +60,8 @@ function GroomPage() {
           close={closeModal}
           header="계좌번호 보기"
         >
-          <AccountNum
-            type="text"
-            id="numInput"
-            value="신한 123456700"
-            readOnly
-          />
+          <p>신한</p>
+          <AccountNum type="text" id="numInput" value="123456700" readOnly />
           <CopyButton onClick={handleCopy}>{copy}</CopyButton>
         </Modal>
       </AccountBox>
