@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import Modal from "../../components/Modal";
 import {
   Container,
+  ProfileNameBox,
+  ProfileImg,
+  ProfileName,
   BrideImg,
   BrideMsg,
   AccountMsg,
@@ -13,6 +16,7 @@ import {
 
 function BridePage() {
   const [modalOpen, setModalOpen] = useState(false);
+  const [copy, setCopy] = useState("복사");
 
   const openModal = () => {
     setModalOpen(true);
@@ -27,10 +31,14 @@ function BridePage() {
     obj.select(); //인풋 컨트롤의 내용 전체 선택
     document.execCommand("copy"); //복사
     obj.setSelectionRange(0, 0); //선택영역 초기화
-    alert("copy right!");
+    setCopy("완료!");
   };
   return (
     <Container>
+      <ProfileNameBox>
+        <ProfileImg src="/img/eundol.jpeg" />
+        <ProfileName>iameundori</ProfileName>
+      </ProfileNameBox>
       <BrideImg src="/img/bride.jpg" />
       <BrideMsg>
         안녕하세요. <br />
@@ -51,13 +59,9 @@ function BridePage() {
           close={closeModal}
           header="계좌번호 보기"
         >
-          <AccountNum
-            type="text"
-            id="numInput"
-            value="우리 123456700"
-            readOnly
-          />
-          <CopyButton onClick={handleCopy}>복사</CopyButton>
+          <p>우리</p>
+          <AccountNum type="text" id="numInput" value="123456700" readOnly />
+          <CopyButton onClick={handleCopy}>{copy}</CopyButton>
         </Modal>
       </AccountBox>
     </Container>

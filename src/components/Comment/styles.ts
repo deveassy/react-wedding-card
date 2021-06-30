@@ -31,7 +31,7 @@ const ForUserMsg = styled.div`
 const FormBox = styled.form``;
 
 const NameInput = styled.input`
-  width: 40vw;
+  width: 120px;
   padding: 10px 25px;
   margin-bottom: 5px;
   border: 1px solid #ccc;
@@ -41,7 +41,7 @@ const NameInput = styled.input`
 
 const ContentBox = styled.div`
   justify-content: space-between;
-  width: 85vw;
+  width: 310px;
   padding: 5px 15px;
   margin-bottom: 5px;
   border: 1px solid #ccc;
@@ -49,7 +49,7 @@ const ContentBox = styled.div`
 `;
 
 const ContentInput = styled.input`
-  width: 70vw;
+  width: 250px;
   padding: 10px;
   border: none;
   outline: none;
@@ -72,7 +72,7 @@ const SingleComment = styled.div`
 `;
 
 const User = styled.p`
-  font-weight: 800;
+  font-weight: bold;
   margin: 0;
   margin-right: 5px;
 `;

@@ -68,9 +68,8 @@ function MapPage() {
       <MapBox>
         <LocationName>명진컨벤션웨딩부페</LocationName>
         <Location>인천광역시 강화군 강화읍 충렬사로 138</Location>
-        <div id="kakaomap" style={{ width: "80vw", height: "35vh" }}></div>
+        <div id="kakaomap" style={{ width: "360px", height: "360px" }}></div>
         <MapLinkBox>
-          {/* map link 연결방식에 대해 생각해봐야 함 */}
           <MapLink href="https://play.google.com/store/apps/details?id=com.skt.tmap.ku&hl=ko&gl=US">
             <MapImg src="/img/tmapicon.png" alt="티맵로고" />
             <MapName>티맵</MapName>

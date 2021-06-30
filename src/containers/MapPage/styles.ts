@@ -12,20 +12,28 @@ const MapMsg = styled.p`
 `;
 
 const MapBox = styled.div`
-  background-color: #f6f6f6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 370px;
   padding: 20px;
+  background-color: #f6f6f6;
 `;
 
 const LocationName = styled.h1`
   margin-top: -10px;
+  font-family: "SLEIGothicTTF";
 `;
 
-const Location = styled.p``;
+const Location = styled.p`
+  font-family: "SLEIGothicTTF";
+`;
 
 const MapLinkBox = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   margin-top: 10px;
 `;
@@ -34,6 +42,7 @@ const MapLink = styled.a`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 30px;
   text-decoration: none;
   color: #000;
 `;

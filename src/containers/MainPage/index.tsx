@@ -44,10 +44,10 @@ function MainPage() {
         {/* 좋아요 버튼 부분 */}
         <LikeComponent likes={post.likes} />
         {/* 메인 메세지 부분 */}
-        <MainMsg>
+        <ProfileName style={{ marginLeft: "20px" }}>
           iameundori + iamjaeill
-          <br />
-          <br />
+        </ProfileName>
+        <MainMsg>
           처음 만난지 {meetDate}일.
           <br />
           오래전 작은인연이 저희를 연인으로 만들었고 <br />

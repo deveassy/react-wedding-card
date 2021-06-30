@@ -1,7 +1,7 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Pagination, Autoplay, Navigation } from "swiper";
-import { WeddingDay, WeddingCount, SlideImg } from "./styles";
+import { SwiperContainer, WeddingDay, WeddingCount, SlideImg } from "./styles";
 
 import "swiper/swiper.scss";
 import "swiper/components/pagination/pagination.scss";
@@ -32,7 +32,7 @@ function SwiperComponent() {
     (weddingDate.getTime() - todayDate.getTime()) / (1000 * 60 * 60 * 24);
 
   return (
-    <Fragment>
+    <SwiperContainer>
       <Swiper
         style={{
           height: "373px",
@@ -60,7 +60,7 @@ function SwiperComponent() {
           );
         })}
       </Swiper>
-    </Fragment>
+    </SwiperContainer>
   );
 }
 

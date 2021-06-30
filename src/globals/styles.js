@@ -1,32 +1,48 @@
 import { createGlobalStyle } from "styled-components";
-import RanchoRegular from "./fonts/Rancho-Regular.ttf";
-import KaushanScript from "./fonts/KaushanScript-Regular.ttf";
+import Caveat from "../globals/fonts/CaveatBrush-Regular.ttf";
+import Dokdo from "../globals/fonts/EastSeaDokdo-Regular.ttf";
+import Lato from "../globals/fonts/Lato-Regular.ttf";
 
 export const GlobalStyle = createGlobalStyle`
-/* @font-face {
-  font-family: 'Dancing Script', cursive;
-  src: url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
-} */
-/* @font-face {
-  font-family: 'Kaushan Script', cursive;
-  src: url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
-} */
-@font-face {
-        font-family: 'Rancho';
-        src: local('Rancho'), url${RanchoRegular} format('truetype');
-        font-weight: 700;
-        font-style: normal;
+  @font-face {
+    font-family: 'Caveat Brush';
+    src: url(${Caveat}) format("truetype");
+  }
+
+  @font-face {
+    font-family: "East Sea Dokdo";
+    src: url(${Dokdo}) format("truetype");
+  }
+
+  @font-face {
+    font-family: "Lato";
+    src: url(${Lato}) format("truetype");
+  }
+
+  @font-face {
+    font-family: 'SLEIGothicTTF';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.0/SLEIGothicTTF.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
 @font-face {
-        font-family: 'Kaushan';
-        src: local('Kaushan'), url${KaushanScript} format('truetype');
-        font-weight: 700;
-        font-style: normal;
+    font-family: 'TDTDTadakTadak';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/TDTDTadakTadak.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
+@font-face {
+    font-family: 'KimNamyun';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/KimNamyun.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
 body {
- margin: 0;
+  width: 373px;
+  margin: 0 auto;
+  font-family: "Lato";
 }
 `;
