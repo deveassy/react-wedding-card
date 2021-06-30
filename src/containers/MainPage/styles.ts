@@ -14,7 +14,6 @@ const Loader = styled(FlexDiv)`
 // 피드(프로필이름 + 사진슬라이더 + 좋아요 + 메세지)
 const FeedBox = styled.div`
   margin-bottom: 10px;
-  border-bottom: 1px solid #ccc;
 `;
 
 const ProfileNameBox = styled(FlexDiv)`
@@ -33,7 +32,7 @@ const ProfileName = styled.p`
 `;
 
 const MainMsg = styled.p`
-  padding-left: 20px;
+  padding: 0 20px;
 `;
 
 export { Loader, FeedBox, ProfileNameBox, ProfileImg, ProfileName, MainMsg };

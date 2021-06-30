@@ -9,7 +9,12 @@ const Container = styled.div`
 
 const CommentBox = styled.div`
   width: 100%;
-  padding-top: 10px;
+`;
+
+const FolderSpan = styled.span`
+  margin: 0 20px;
+  font-size: 0.95em;
+  color: #999;
 `;
 
 const ForUserMsg = styled.div`
@@ -63,7 +68,7 @@ const SingleComment = styled.div`
   flex-direction: row;
   align-items: center;
   height: 25px;
-  margin: 0 10px;
+  margin: 0 20px;
 `;
 
 const User = styled.p`
@@ -79,6 +84,7 @@ const Text = styled.p`
 export {
   Container,
   CommentBox,
+  FolderSpan,
   ForUserMsg,
   FormBox,
   NameInput,
