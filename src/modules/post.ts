@@ -43,7 +43,10 @@ const postReducer = (state: State = initialState, action: Action): State => {
     case UPDATE_POST:
       return action.payload;
     case ADD_LIKE:
-      if (state?.likes) {
+      const flag = "like_flag";
+      if (state?.likes && !localStorage.getItem(flag)) {
+        // localStorage에 플래그 표시
+        localStorage.setItem(flag, "true");
         return {
           ...state,
           likes: state.likes + 1,

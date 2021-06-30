@@ -7,13 +7,16 @@ type LikeProps = {
   likes: number;
 };
 
+const flag = localStorage.getItem("like_flag");
+
 function LikeComponent(props: LikeProps) {
-  const [like, setLike] = useState(false);
+  const [like, setLike] = useState(Boolean(flag));
   const { likes } = props;
 
   const dispatch = useDispatch();
   const handleClick = (): void => {
-    if (like) return;
+    if (like && flag) return;
+    dispatch(addLike());
     setLike(true);
     fetch("https://us-central1-enoveh-toy.cloudfunctions.net/addLike", {
       method: "POST",
@@ -23,14 +26,7 @@ function LikeComponent(props: LikeProps) {
       body: JSON.stringify({
         postId: "v6subHi6XYmqJn6xypq2",
       }),
-    })
-      .then((response) => response.json())
-      .then((json) => {
-        console.log(json);
-        if (json.status === 200) {
-          dispatch(addLike());
-        }
-      });
+    });
   };
 
   return (
