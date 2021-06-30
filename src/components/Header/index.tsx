@@ -20,6 +20,7 @@ export default function Header() {
       <LogoLinkBox>
         <LogoLink to={paths.main}>
           <LogoImg src="/img/logo.png" />
+          <p style={{ margin: 0 }}>Doristagram</p>
         </LogoLink>
       </LogoLinkBox>
       <StoryLinkBox>

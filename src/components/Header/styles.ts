@@ -8,29 +8,38 @@ export const FlexDiv = styled.div`
 
 export const TabContainer = styled.div`
   position: relative;
-  padding-top: 60px;
+  padding-top: 70px;
+  border-bottom: 0.5px solid #ccc;
 `;
 
 export const LogoLinkBox = styled.div`
   position: fixed;
   z-index: 99;
   top: 0;
-  width: 100vw;
+  width: 353px;
+  padding: 20px 0 10px 20px;
   background-color: #fff;
+  border-bottom: 0.3px solid #f1f3f5;
 `;
 
 export const LogoLink = styled(Link)`
-  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-decoration: none;
+  font-family: "Marker felt";
+  font-size: 2em;
+  color: #000;
 `;
 
 export const LogoImg = styled.img`
-  width: 200px;
-  margin-top: 10px;
+  width: 30px;
+  height: 30px;
+  margin-right: 15px;
 `;
 
 export const StoryLinkBox = styled(FlexDiv)`
   justify-content: space-between;
-  border-bottom: 1px solid #ccc;
 `;
 export const StoryLink = styled(Link)`
   display: flex;
