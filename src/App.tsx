@@ -7,14 +7,22 @@ import { Provider, useDispatch } from "react-redux";
 import rootReducer from "./modules";
 import { updatePost } from "./modules/post";
 
-import postMock from "./mocks/post.json";
-
 const store = createStore(rootReducer);
 
 function RenderApp() {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(updatePost(postMock as PostTypes));
+    const postId = "v6subHi6XYmqJn6xypq2";
+    fetch(
+      `https://us-central1-enoveh-toy.cloudfunctions.net/getPost?postId=${postId}`
+    )
+      .then((response) => response.json())
+      .then((json) => {
+        console.log(json);
+        if (json.status === 200) {
+          dispatch(updatePost(json.result as PostTypes));
+        }
+      });
   }, [dispatch]);
 
   return (
