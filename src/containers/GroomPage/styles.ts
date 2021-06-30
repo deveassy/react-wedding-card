@@ -40,8 +40,7 @@ const GroomImg = styled.img`
 
 const GroomMsg = styled.p`
   margin: 10px;
-  font-family: "KimNamyun";
-  font-size: 1.4em;
+  font-size: 1.2em;
 `;
 
 const AccountBox = styled(FlexDiv)``;

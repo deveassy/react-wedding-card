@@ -37,10 +37,10 @@ function GroomPage() {
   return (
     <Container>
       <ProfileNameBox>
-        <ProfileImg src="/img/eundol.jpeg" />
+        <ProfileImg src="/img/IMG4.jpg" />
         <ProfileName>iamjaeill</ProfileName>
       </ProfileNameBox>
-      <GroomImg src="/img/groom.jpg" />
+      <GroomImg src="/img/IMG6.jpeg" />
       <GroomMsg>
         안녕하세요. <br />
         드디어 신랑이 되는 000입니다. <br />

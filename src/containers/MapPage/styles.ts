@@ -23,12 +23,9 @@ const MapBox = styled.div`
 
 const LocationName = styled.h1`
   margin-top: -10px;
-  font-family: "SLEIGothicTTF";
 `;
 
-const Location = styled.p`
-  font-family: "SLEIGothicTTF";
-`;
+const Location = styled.p``;
 
 const MapLinkBox = styled.div`
   display: flex;

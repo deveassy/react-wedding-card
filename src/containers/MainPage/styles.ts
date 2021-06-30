@@ -8,7 +8,8 @@ const FlexDiv = styled.div`
 const Loader = styled(FlexDiv)`
   justify-content: center;
   margin-top: 200px;
-  font-size: 30px;
+  font-size: 20px;
+  color: #999;
 `;
 
 // 피드(프로필이름 + 사진슬라이더 + 좋아요 + 메세지)

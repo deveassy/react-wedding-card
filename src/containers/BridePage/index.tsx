@@ -36,10 +36,10 @@ function BridePage() {
   return (
     <Container>
       <ProfileNameBox>
-        <ProfileImg src="/img/eundol.jpeg" />
+        <ProfileImg src="/img/IMG4.jpg" />
         <ProfileName>iameundori</ProfileName>
       </ProfileNameBox>
-      <BrideImg src="/img/bride.jpg" />
+      <BrideImg src="/img/IMG5.jpeg" />
       <BrideMsg>
         안녕하세요. <br />
         드디어 신부가 되는 000입니다. <br />

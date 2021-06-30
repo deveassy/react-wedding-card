@@ -30,13 +30,13 @@ function MainPage() {
 
   const post = useSelector((state: RootState) => state.postReducer);
 
-  if (!post) return <Loader>loading...</Loader>;
+  if (!post) return <Loader>WELCOME!</Loader>;
 
   return (
     <Fragment>
       <FeedBox>
         <ProfileNameBox>
-          <ProfileImg src="/img/eundol.jpeg" />
+          <ProfileImg src="/img/IMG4.jpg" />
           <ProfileName>iameundori + iamjaeill</ProfileName>
         </ProfileNameBox>
         {/* 사진 스와이퍼 부분 */}

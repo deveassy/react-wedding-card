@@ -40,7 +40,6 @@ const BrideImg = styled.img`
 
 const BrideMsg = styled.p`
   margin: 10px;
-  font-family: "TDTDTadakTadak";
   font-size: 1.2em;
 `;
 

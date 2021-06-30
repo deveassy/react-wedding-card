@@ -24,11 +24,11 @@ export default function Header() {
       </LogoLinkBox>
       <StoryLinkBox>
         <StoryLink to={paths.groom}>
-          <StoryImg src="/img/groom.jpg" />
+          <StoryImg src="/img/IMG6.jpeg" />
           iamjaeill
         </StoryLink>
         <StoryLink to={paths.bride}>
-          <StoryImg src="/img/bride.jpg" />
+          <StoryImg src="/img/IMG5.jpeg" />
           iameundori
         </StoryLink>
         <StoryLink to={paths.map}>
