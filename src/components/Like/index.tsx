@@ -32,7 +32,10 @@ function LikeComponent(props: LikeProps) {
   return (
     <LikeBox>
       <LikeImgBtn onClick={handleClick}>
-        <LikeImg src={like ? "/img/heart.png" : "/img/emptyHeart.png"} />
+        <LikeImg
+          src={like ? "/img/heart.png" : "/img/emptyHeart.png"}
+          alt="heart img"
+        />
       </LikeImgBtn>
       <LikeNum>좋아요 {likes}개</LikeNum>
     </LikeBox>

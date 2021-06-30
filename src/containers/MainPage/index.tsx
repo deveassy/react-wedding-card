@@ -10,6 +10,7 @@ import {
   ProfileNameBox,
   ProfileImg,
   ProfileName,
+  LoveImg,
   MainMsg,
 } from "./styles";
 import { RootState } from "../../modules";
@@ -36,8 +37,12 @@ function MainPage() {
     <Fragment>
       <FeedBox>
         <ProfileNameBox>
-          <ProfileImg src="/img/IMG4.jpg" />
-          <ProfileName>iameundori + iamjaeill</ProfileName>
+          <ProfileImg src="/img/IMG4.jpg" alt="main small profile img" />
+          <ProfileName>
+            iameundori
+            <LoveImg src="/img/love.png" alt="heart img" />
+            iamjaeill
+          </ProfileName>
         </ProfileNameBox>
         {/* 사진 스와이퍼 부분 */}
         <SwiperComponent />
@@ -45,7 +50,9 @@ function MainPage() {
         <LikeComponent likes={post.likes} />
         {/* 메인 메세지 부분 */}
         <ProfileName style={{ marginLeft: "20px" }}>
-          iameundori + iamjaeill
+          iameundori
+          <LoveImg src="/img/love.png" alt="heart img" />
+          iamjaeill
         </ProfileName>
         <MainMsg>
           처음 만난지 {meetDate}일.

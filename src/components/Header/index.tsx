@@ -19,21 +19,21 @@ export default function Header() {
     <TabContainer>
       <LogoLinkBox>
         <LogoLink to={paths.main}>
-          <LogoImg src="/img/logo.png" />
+          <LogoImg src="/img/logo.png" alt="logo img" />
           <p style={{ margin: 0 }}>Doristagram</p>
         </LogoLink>
       </LogoLinkBox>
       <StoryLinkBox>
         <StoryLink to={paths.groom}>
-          <StoryImg src="/img/IMG6.jpeg" />
+          <StoryImg src="/img/IMG6.jpeg" alt="groom story img" />
           iamjaeill
         </StoryLink>
         <StoryLink to={paths.bride}>
-          <StoryImg src="/img/IMG5.jpeg" />
+          <StoryImg src="/img/IMG5.jpeg" alt="bride story img" />
           iameundori
         </StoryLink>
         <StoryLink to={paths.map}>
-          <StoryImg src="/img/kmapicon.png" />
+          <StoryImg src="/img/kmapicon.png" alt="map story img" />
           kakaomap
         </StoryLink>
       </StoryLinkBox>

@@ -46,30 +46,30 @@ function MapPage() {
     // create address-coordinates change obj
     const geocoder = new kakao.maps.services.Geocoder();
     // research coordinates from address
-    geocoder.addressSearch(
-      "인천 강화군 강화읍 충렬사로 138",
-      function (result: any, status: any) {
-        if (status === kakao.maps.services.Status.OK) {
-          var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+    geocoder.addressSearch("인천 강화군 강화읍 충렬사로 138", function (
+      result: any,
+      status: any
+    ) {
+      if (status === kakao.maps.services.Status.OK) {
+        var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
 
-          // indication marker
-          var marker = new kakao.maps.Marker({
-            map: map,
-            position: coords,
-          });
+        // indication marker
+        var marker = new kakao.maps.Marker({
+          map: map,
+          position: coords,
+        });
 
-          // custom location info
-          var infowindow = new kakao.maps.InfoWindow({
-            content:
-              '<div style="width:150px;text-align:center;padding:6px 0;">은솔&재일 결혼식장</div>',
-          });
-          infowindow.open(map, marker);
+        // custom location info
+        var infowindow = new kakao.maps.InfoWindow({
+          content:
+            '<div style="width:150px;text-align:center;padding:6px 0;">은솔&재일 결혼식장</div>',
+        });
+        infowindow.open(map, marker);
 
-          // move to center
-          map.setCenter(coords);
-        }
+        // move to center
+        map.setCenter(coords);
       }
-    );
+    });
   }, [location]);
 
   return (
@@ -81,11 +81,11 @@ function MapPage() {
         <div id="kakaomap" style={{ width: "360px", height: "360px" }}></div>
         <MapLinkBox>
           <MapLink href="https://play.google.com/store/apps/details?id=com.skt.tmap.ku&hl=ko&gl=US">
-            <MapImg src="/img/tmapicon.png" alt="티맵로고" />
+            <MapImg src="/img/tmapicon.png" alt="tmap logo" />
             <MapName>티맵</MapName>
           </MapLink>
           <MapLink href="https://map.naver.com/v5/entry/place/16550040?c=14078705.2648180,4541454.9695063,15,0,0,0,dh">
-            <MapImg src="/img/navermapicon.png" alt="네이버맵로고" />
+            <MapImg src="/img/navermapicon.png" alt="navermap logo" />
             <MapName>네이버맵</MapName>
           </MapLink>
         </MapLinkBox>

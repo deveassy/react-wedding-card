@@ -13,9 +13,9 @@ SwiperCore.use([Pagination, Autoplay, Navigation]);
  * 슬라이더 사진 모음
  */
 const sliders = [
-  { src: "/img/IMG1.png", alt: "img1" },
-  { src: "/img/IMG2.jpeg", alt: "img2" },
-  { src: "/img/IMG3.jpeg", alt: "img3" },
+  { src: "/img/IMG1.png", alt: "swiper img1" },
+  { src: "/img/IMG2.jpeg", alt: "swiper img2" },
+  { src: "/img/IMG3.jpeg", alt: "swiper img3" },
 ];
 
 function SwiperComponent() {
@@ -48,7 +48,7 @@ function SwiperComponent() {
           <WeddingCount>D - {weddingDday}</WeddingCount>
           <SlideImg
             src="/img/mainIMG.jpg"
-            alt="main-img"
+            alt="main img"
             style={{ opacity: "0.2" }}
           />
         </SwiperSlide>

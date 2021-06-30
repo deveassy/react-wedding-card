@@ -33,8 +33,22 @@ const ProfileName = styled.p`
   font-weight: bold;
 `;
 
+const LoveImg = styled.img`
+  width: 13px;
+  height: 13px;
+  margin: 0 5px;
+`;
+
 const MainMsg = styled.p`
   padding: 0 20px;
 `;
 
-export { Loader, FeedBox, ProfileNameBox, ProfileImg, ProfileName, MainMsg };
+export {
+  Loader,
+  FeedBox,
+  ProfileNameBox,
+  ProfileImg,
+  ProfileName,
+  LoveImg,
+  MainMsg,
+};
