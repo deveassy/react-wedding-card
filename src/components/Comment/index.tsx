@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addComment } from "../../modules/post";
+import ToastMessage from "../ToastMessage";
 import {
   Container,
   CommentBox,
@@ -49,6 +50,7 @@ export default function CommentComponent(props: CommentStateProps) {
   });
 
   const [visible, setVisible] = useState(false);
+  const [isActive, setIsActive] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -77,6 +79,7 @@ export default function CommentComponent(props: CommentStateProps) {
       username: username,
       text: content,
     };
+    dispatch(addComment(comment));
     fetch("https://us-central1-enoveh-toy.cloudfunctions.net/addComment", {
       method: "POST",
       headers: {
@@ -86,10 +89,9 @@ export default function CommentComponent(props: CommentStateProps) {
     })
       .then((response) => response.json())
       .then((json) => {
-        console.log(json);
         if (json.status === 200) {
-          dispatch(addComment(comment));
         }
+        console.log(json);
       });
   };
 
@@ -110,10 +112,10 @@ export default function CommentComponent(props: CommentStateProps) {
               return <CommentOutput key={index} comment={comment} />;
             })
           : null}
-        <ForUserMsg>
-          신랑,신부에게 축하의 메세지를 남겨주세요! (게시 후엔 삭제 불가능)
-        </ForUserMsg>
       </CommentBox>
+      <ForUserMsg>
+        신랑,신부에게 축하의 메세지를 남겨주세요! (게시 후엔 삭제 불가능)
+      </ForUserMsg>
       <FormBox onSubmit={handleSubmit}>
         <NameInput
           name="username"
@@ -128,7 +130,12 @@ export default function CommentComponent(props: CommentStateProps) {
             value={inputs.content}
             onChange={handleChange}
           />
-          <SubmitBtn type="submit">게시</SubmitBtn>
+          <SubmitBtn type="submit" onClick={() => setIsActive(true)}>
+            게시
+          </SubmitBtn>
+          <ToastMessage isActive={isActive} setIsActive={setIsActive}>
+            게시 성공!
+          </ToastMessage>
         </ContentBox>
       </FormBox>
     </Container>

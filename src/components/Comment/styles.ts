@@ -41,6 +41,7 @@ const NameInput = styled.input`
 `;
 
 const ContentBox = styled.div`
+  position: relative;
   justify-content: space-between;
   width: 310px;
   padding: 5px 15px;

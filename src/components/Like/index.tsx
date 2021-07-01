@@ -9,7 +9,7 @@ type LikeProps = {
 
 const flag = localStorage.getItem("like_flag");
 
-function LikeComponent(props: LikeProps) {
+export default function LikeComponent(props: LikeProps) {
   const [like, setLike] = useState(Boolean(flag));
   const { likes } = props;
 
@@ -41,5 +41,3 @@ function LikeComponent(props: LikeProps) {
     </LikeBox>
   );
 }
-
-export default LikeComponent;

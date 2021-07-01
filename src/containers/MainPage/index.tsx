@@ -33,7 +33,6 @@ function MainPage() {
 
   const post = useSelector((state: RootState) => state.postReducer);
 
-  // if (!post) return <Loader>WELCOME!</Loader>;
   if (!post)
     return (
       <Loader>
