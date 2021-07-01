@@ -6,6 +6,7 @@ const FlexDiv = styled.div`
 `;
 
 const Loader = styled(FlexDiv)`
+  flex-direction: column;
   justify-content: center;
   margin-top: 200px;
   font-size: 20px;

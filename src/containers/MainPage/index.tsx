@@ -4,6 +4,8 @@ import CommentComponent from "../../components/Comment";
 import SwiperComponent from "../../components/Swiper";
 import LikeComponent from "../../components/Like";
 
+import Spinner from "../../components/Spinner";
+
 import {
   Loader,
   FeedBox,
@@ -31,7 +33,14 @@ function MainPage() {
 
   const post = useSelector((state: RootState) => state.postReducer);
 
-  if (!post) return <Loader>WELCOME!</Loader>;
+  // if (!post) return <Loader>WELCOME!</Loader>;
+  if (!post)
+    return (
+      <Loader>
+        WELCOME!
+        <Spinner />
+      </Loader>
+    );
 
   return (
     <Fragment>
