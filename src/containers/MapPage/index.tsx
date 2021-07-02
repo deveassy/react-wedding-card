@@ -89,10 +89,17 @@ function MapPage() {
         <LocationName>명진컨벤션웨딩부페</LocationName>
         <p>인천광역시 강화군 강화읍 충렬사로 138</p>
         <div id="kakaomap" style={{ width: "360px", height: "360px" }}></div>
+        <div style={{ marginTop: "10px", fontSize: "0.7em", color: "#888" }}>
+          아래 아이콘을 클릭하면 앱으로 연결됩니다.
+        </div>
         <MapLinkBox>
-          <MapLink href="https://play.google.com/store/apps/details?id=com.skt.tmap.ku&hl=ko&gl=US">
+          <MapLink href="kakaomap://look?p=37.73106585767622,126.47569078291531">
             <MapImg src="/img/kmapicon.png" alt="kakaomap logo" />
             <MapName>카카오맵</MapName>
+          </MapLink>
+          <MapLink href="tmap://search?name=명진컨벤션웨딩부페">
+            <MapImg src="/img/tmapicon.png" alt="tmap logo" />
+            <MapName>티맵</MapName>
           </MapLink>
           <MapLink href="nmap://place?lat=37.73106585767622&lng=126.47569078291531&name=%eb%aa%85%ec%a7%84%ec%bb%a8%eb%b2%a4%ec%85%98%ec%9b%a8%eb%94%a9%eb%b6%80%ed%8e%98&appname=https://doristagram--pr34-ethan-config-github-5u0z5ljj.web.app/">
             <MapImg src="/img/navermapicon.png" alt="navermap logo" />

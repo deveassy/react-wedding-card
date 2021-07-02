@@ -34,14 +34,13 @@ const MapLinkBox = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin-top: 10px;
 `;
 
 const MapLink = styled.a`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 30px;
+  margin: 20px;
   text-decoration: none;
   color: #000;
 `;
