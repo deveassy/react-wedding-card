@@ -41,35 +41,45 @@ function MapPage() {
       ),
       level: 3,
     };
-    const map = new kakao.maps.Map(container, options);
 
-    // create address-coordinates change obj
-    const geocoder = new kakao.maps.services.Geocoder();
-    // research coordinates from address
-    geocoder.addressSearch("인천 강화군 강화읍 충렬사로 138", function (
-      result: any,
-      status: any
-    ) {
-      if (status === kakao.maps.services.Status.OK) {
-        var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+    try {
+      const map = new kakao.maps.Map(container, options);
 
-        // indication marker
-        var marker = new kakao.maps.Marker({
-          map: map,
-          position: coords,
-        });
+      // create address-coordinates change obj
+      const geocoder = new kakao.maps.services.Geocoder();
+      // research coordinates from address
+      geocoder.addressSearch(
+        "인천 강화군 강화읍 충렬사로 138",
+        function (result: any, status: any) {
+          if (status === kakao.maps.services.Status.OK) {
+            var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
 
-        // custom location info
-        var infowindow = new kakao.maps.InfoWindow({
-          content:
-            '<div style="width:150px;text-align:center;padding:6px 0;">은솔&재일 결혼식장</div>',
-        });
-        infowindow.open(map, marker);
+            // indication marker
+            var marker = new kakao.maps.Marker({
+              map: map,
+              position: coords,
+            });
 
-        // move to center
-        map.setCenter(coords);
-      }
-    });
+            // custom location info
+            var infowindow = new kakao.maps.InfoWindow({
+              content:
+                '<div style="width:150px;text-align:center;padding:6px 0;">은솔&재일 결혼식장</div>',
+            });
+            infowindow.open(map, marker);
+
+            // move to center
+            map.setCenter(coords);
+          }
+        }
+      );
+    } catch (error) {
+      console.log("cannot use kakaomap api, please check your URL");
+      document
+        .getElementById("kakaomap")
+        ?.append(
+          '<div style="width:150px;text-align:center;padding:6px 0;">은솔&재일 결혼식장</div>'
+        );
+    }
   }, [location]);
 
   return (
