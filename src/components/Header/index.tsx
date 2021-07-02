@@ -18,7 +18,7 @@ export default function Header() {
   return (
     <TabContainer>
       <LogoLinkBox>
-        <LogoLink to={paths.main}>
+        <LogoLink to={paths.main} onClick={() => window.scrollTo(0, 0)}>
           <LogoImg src="/img/logo.png" alt="logo img" />
           <p style={{ margin: 0 }}>Doristagram</p>
         </LogoLink>
