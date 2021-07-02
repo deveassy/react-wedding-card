@@ -72,20 +72,14 @@ const SubmitBtn = styled.button`
 const SingleComment = styled.div`
   display: flex;
   flex-direction: row;
-  align-items: center;
-  height: 25px;
-  margin: 0 20px;
+  align-items: flex-start;
+  position: relative;
+  margin: 10px 20px;
 `;
 
 const User = styled.p`
-  font-weight: bold;
   margin: 0;
-  margin-right: 5px;
-`;
-
-const Text = styled.p`
-  margin: 0;
-  margin-right: 5px;
+  display: inline;
 `;
 
 export {
@@ -101,5 +95,4 @@ export {
   SubmitBtn,
   SingleComment,
   User,
-  Text,
 };
