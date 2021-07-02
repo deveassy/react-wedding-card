@@ -3,10 +3,9 @@ import { useSelector } from "react-redux";
 import { RootState } from "../../modules";
 import {
   PageContainer,
-  MapMsg,
+  HowToCome,
   MapBox,
   LocationName,
-  Location,
   MapLinkBox,
   MapLink,
   MapImg,
@@ -62,7 +61,7 @@ function MapPage() {
         // custom location info
         var infowindow = new kakao.maps.InfoWindow({
           content:
-            '<div style="width:150px;text-align:center;padding:6px 0;">은솔&재일 결혼식장</div>',
+            '<div style="width:150px;text-align:center;padding:6px 0;">Here!</div>',
         });
         infowindow.open(map, marker);
 
@@ -74,10 +73,21 @@ function MapPage() {
 
   return (
     <PageContainer>
-      <MapMsg>☺︎ 오시는 길 ☺︎</MapMsg>
+      <HowToCome
+        style={{
+          borderBottom: "1px solid #CA8A8B",
+          fontSize: "0.8em",
+          fontFamily: "Marker Felt",
+        }}
+      >
+        Location
+      </HowToCome>
+      <HowToCome style={{ fontSize: "1.2em", color: "#777" }}>
+        오시는 길
+      </HowToCome>
       <MapBox>
         <LocationName>명진컨벤션웨딩부페</LocationName>
-        <Location>인천광역시 강화군 강화읍 충렬사로 138</Location>
+        <p>인천광역시 강화군 강화읍 충렬사로 138</p>
         <div id="kakaomap" style={{ width: "360px", height: "360px" }}></div>
         <MapLinkBox>
           <MapLink href="https://play.google.com/store/apps/details?id=com.skt.tmap.ku&hl=ko&gl=US">

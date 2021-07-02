@@ -7,8 +7,12 @@ const PageContainer = styled.div`
   align-items: center;
 `;
 
-const MapMsg = styled.p`
-  font-size: 1.3em;
+const HowToCome = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 120px;
+  padding: 10px 0;
+  color: #ccc;
 `;
 
 const MapBox = styled.div`
@@ -17,15 +21,13 @@ const MapBox = styled.div`
   align-items: center;
   justify-content: center;
   width: 370px;
-  padding: 20px;
+  margin: 10px;
   background-color: #f6f6f6;
 `;
 
 const LocationName = styled.h1`
-  margin-top: -10px;
+  margin-bottom: -10px;
 `;
-
-const Location = styled.p``;
 
 const MapLinkBox = styled.div`
   display: flex;
@@ -55,10 +57,9 @@ const MapName = styled.p``;
 
 export {
   PageContainer,
-  MapMsg,
+  HowToCome,
   MapBox,
   LocationName,
-  Location,
   MapLinkBox,
   MapLink,
   MapImg,

@@ -7,13 +7,11 @@ const FlexDiv = styled.div`
 
 const Container = styled(FlexDiv)`
   flex-direction: column;
-  justify-content: center;
-  padding: 10px;
 `;
 
 const ProfileNameBox = styled(FlexDiv)`
   flex-direction: row;
-  width: 100%;
+  width: 358px;
   margin-left: 15px;
 `;
 

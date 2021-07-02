@@ -34,7 +34,7 @@ type CommentOutputProps = {
 function CommentOutput(props: CommentOutputProps) {
   const { comment } = props;
   return (
-    <SingleComment style={{ display: "flex", flexDirection: "row" }}>
+    <SingleComment>
       <User>
         <span style={{ fontWeight: "bold", marginRight: "8px" }}>
           {comment.username}

@@ -25,7 +25,7 @@ const ProfileNameBox = styled(FlexDiv)`
 const ProfileImg = styled.img`
   width: 30px;
   height: 30px;
-  border: 1px solid #000;
+  border: 1px solid #ccc;
   border-radius: 50%;
   margin-right: 10px;
 `;
