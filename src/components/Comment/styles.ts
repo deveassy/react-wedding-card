@@ -68,20 +68,28 @@ const SubmitBtn = styled.button`
 const SingleComment = styled.div`
   display: flex;
   flex-direction: row;
-  align-items: center;
-  height: 25px;
-  margin: 0 20px;
+  align-items: flex-start;
+  position: relative;
+  margin: 10px 20px;
 `;
 
-const User = styled.p`
-  font-weight: bold;
-  margin: 0;
+const User = styled.span`
+  display: inline-block;
+  position: relative;
+  width: auto;
   margin-right: 5px;
+  font-weight: 800;
+  vertical-align: baseline;
+  white-space: nowrap;
 `;
 
-const Text = styled.p`
+const Text = styled.span`
+  display: inline-block;
+  width: auto;
+  white-space: normal;
   margin: 0;
   margin-right: 5px;
+  vertical-align: baseline;
 `;
 
 export {

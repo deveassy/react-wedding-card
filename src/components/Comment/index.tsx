@@ -122,6 +122,7 @@ export default function CommentComponent(props: CommentStateProps) {
           placeholder="이름을 넣어주세요"
           value={inputs.username}
           onChange={handleChange}
+          maxLength={5}
         />
         <ContentBox>
           <ContentInput
