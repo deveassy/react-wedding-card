@@ -14,7 +14,6 @@ import {
   SubmitBtn,
   SingleComment,
   User,
-  Text,
 } from "./styles";
 
 type InputState = {
@@ -35,8 +34,12 @@ function CommentOutput(props: CommentOutputProps) {
   const { comment } = props;
   return (
     <SingleComment style={{ display: "flex", flexDirection: "row" }}>
-      <User>{comment.username}</User>
-      <Text>{comment.text}</Text>
+      <User>
+        <span style={{ fontWeight: "bold", marginRight: "8px" }}>
+          {comment.username}
+        </span>
+        <span>{comment.text}</span>
+      </User>
     </SingleComment>
   );
 }

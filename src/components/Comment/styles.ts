@@ -73,23 +73,9 @@ const SingleComment = styled.div`
   margin: 10px 20px;
 `;
 
-const User = styled.span`
-  display: inline-block;
-  position: relative;
-  width: auto;
-  margin-right: 5px;
-  font-weight: 800;
-  vertical-align: baseline;
-  white-space: nowrap;
-`;
-
-const Text = styled.span`
-  display: inline-block;
-  width: auto;
-  white-space: normal;
+const User = styled.p`
   margin: 0;
-  margin-right: 5px;
-  vertical-align: baseline;
+  display: inline;
 `;
 
 export {
@@ -104,5 +90,4 @@ export {
   SubmitBtn,
   SingleComment,
   User,
-  Text,
 };
