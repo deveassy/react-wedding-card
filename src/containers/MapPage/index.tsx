@@ -91,10 +91,10 @@ function MapPage() {
         <div id="kakaomap" style={{ width: "360px", height: "360px" }}></div>
         <MapLinkBox>
           <MapLink href="https://play.google.com/store/apps/details?id=com.skt.tmap.ku&hl=ko&gl=US">
-            <MapImg src="/img/tmapicon.png" alt="tmap logo" />
-            <MapName>티맵</MapName>
+            <MapImg src="/img/kmapicon.png" alt="kakaomap logo" />
+            <MapName>카카오맵</MapName>
           </MapLink>
-          <MapLink href="https://map.naver.com/v5/entry/place/16550040?c=14078705.2648180,4541454.9695063,15,0,0,0,dh">
+          <MapLink href="nmap://place?lat=37.73106585767622&lng=126.47569078291531&name=%eb%aa%85%ec%a7%84%ec%bb%a8%eb%b2%a4%ec%85%98%ec%9b%a8%eb%94%a9%eb%b6%80%ed%8e%98&appname=https://doristagram--pr34-ethan-config-github-5u0z5ljj.web.app/">
             <MapImg src="/img/navermapicon.png" alt="navermap logo" />
             <MapName>네이버맵</MapName>
           </MapLink>
