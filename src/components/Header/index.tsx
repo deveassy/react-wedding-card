@@ -5,7 +5,9 @@ import {
   LogoLink,
   LogoImg,
   StoryLinkBox,
+  StoryImgBox,
   StoryImg,
+  StoryName,
   StoryLink,
 } from "./styles";
 import paths from "../../routes/paths.json";
@@ -25,16 +27,22 @@ export default function Header() {
       </LogoLinkBox>
       <StoryLinkBox>
         <StoryLink to={paths.groom}>
-          <StoryImg src="/img/IMG6.jpeg" alt="groom story img" />
-          iamjaeill
+          <StoryImgBox>
+            <StoryImg src="/img/IMG6.jpeg" alt="groom story img" />
+          </StoryImgBox>
+          <StoryName>iamjaeill</StoryName>
         </StoryLink>
         <StoryLink to={paths.bride}>
-          <StoryImg src="/img/IMG5.jpeg" alt="bride story img" />
-          iameundori
+          <StoryImgBox>
+            <StoryImg src="/img/IMG5.jpeg" alt="bride story img" />
+          </StoryImgBox>
+          <StoryName>iameundori</StoryName>
         </StoryLink>
         <StoryLink to={paths.map}>
-          <StoryImg src="/img/kmapicon.png" alt="map story img" />
-          kakaomap
+          <StoryImgBox>
+            <StoryImg src="/img/kmapicon.png" alt="map story img" />
+          </StoryImgBox>
+          <StoryName>kakaomap</StoryName>
         </StoryLink>
       </StoryLinkBox>
     </TabContainer>
