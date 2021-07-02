@@ -42,6 +42,7 @@ const LoveImg = styled.img`
 
 const MainMsg = styled.p`
   padding: 0 20px;
+  margin: 0 0 10px;
 `;
 
 export {

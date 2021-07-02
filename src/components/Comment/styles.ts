@@ -16,6 +16,7 @@ const FolderSpan = styled.span`
   margin: 0 20px;
   font-size: 0.95em;
   color: #999;
+  cursor: pointer;
 `;
 
 const ForUserMsg = styled.div`
@@ -24,9 +25,12 @@ const ForUserMsg = styled.div`
   align-items: center;
   width: 100%;
   padding: 10px 0;
+  font-size: 0.8em;
+`;
+
+const CommentFooter = styled.div`
   margin-top: 10px;
   border-top: 1px solid #ccc;
-  font-size: 0.8em;
 `;
 
 const FormBox = styled.form``;
@@ -40,7 +44,7 @@ const NameInput = styled.input`
   outline: none;
 `;
 
-const ContentBox = styled.div`
+const BtnInInput = styled.div`
   position: relative;
   justify-content: space-between;
   width: 310px;
@@ -89,9 +93,10 @@ export {
   CommentBox,
   FolderSpan,
   ForUserMsg,
+  CommentFooter,
   FormBox,
   NameInput,
-  ContentBox,
+  BtnInInput,
   ContentInput,
   SubmitBtn,
   SingleComment,

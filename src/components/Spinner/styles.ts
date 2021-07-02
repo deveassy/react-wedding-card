@@ -14,10 +14,8 @@ export const SpinnerBox = styled.div`
   height: 40px;
   margin-top: 20px;
   background-color: transparent;
-  border: 4.5px solid #9b6cbf;
+  border: 4.5px solid rgba(209, 205, 205, 0.6);
   border-radius: 50%;
-  border-top-color: rgba(209, 205, 205, 0.6);
-  border-bottom-color: rgba(209, 205, 205, 0.6);
-  border-right-color: rgba(209, 205, 205, 0.6);
+  border-left-color: #9b6cbf;
   animation: ${Effect} 2000ms infinite;
 `;

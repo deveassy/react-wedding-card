@@ -7,9 +7,10 @@ import {
   CommentBox,
   FolderSpan,
   ForUserMsg,
+  CommentFooter,
   FormBox,
   NameInput,
-  ContentBox,
+  BtnInInput,
   ContentInput,
   SubmitBtn,
   SingleComment,
@@ -113,31 +114,33 @@ export default function CommentComponent(props: CommentStateProps) {
             })
           : null}
       </CommentBox>
-      <ForUserMsg>
-        신랑,신부에게 축하의 메세지를 남겨주세요! (게시 후엔 삭제 불가능)
-      </ForUserMsg>
-      <FormBox onSubmit={handleSubmit}>
-        <NameInput
-          name="username"
-          placeholder="이름을 넣어주세요"
-          value={inputs.username}
-          onChange={handleChange}
-        />
-        <ContentBox>
-          <ContentInput
-            name="content"
-            placeholder="댓글 달기..."
-            value={inputs.content}
+      <CommentFooter>
+        <ForUserMsg>
+          신랑,신부에게 축하의 메세지를 남겨주세요! (게시 후엔 삭제 불가능)
+        </ForUserMsg>
+        <FormBox onSubmit={handleSubmit}>
+          <NameInput
+            name="username"
+            placeholder="이름을 넣어주세요"
+            value={inputs.username}
             onChange={handleChange}
           />
-          <SubmitBtn type="submit" onClick={() => setIsActive(true)}>
-            게시
-          </SubmitBtn>
-          <ToastMessage isActive={isActive} setIsActive={setIsActive}>
-            게시 성공!
-          </ToastMessage>
-        </ContentBox>
-      </FormBox>
+          <BtnInInput>
+            <ContentInput
+              name="content"
+              placeholder="댓글 달기..."
+              value={inputs.content}
+              onChange={handleChange}
+            />
+            <SubmitBtn type="submit" onClick={() => setIsActive(true)}>
+              게시
+            </SubmitBtn>
+            <ToastMessage isActive={isActive} setIsActive={setIsActive}>
+              게시 성공!
+            </ToastMessage>
+          </BtnInInput>
+        </FormBox>
+      </CommentFooter>
     </Container>
   );
 }
