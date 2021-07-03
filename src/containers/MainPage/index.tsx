@@ -22,7 +22,7 @@ function MainPage() {
   todayDate.setHours(0);
   todayDate.setMinutes(0);
   todayDate.setSeconds(0, 0);
-  const anniversaryDate = new Date("2011/06/09");
+  const anniversaryDate = new Date("2021/01/01");
 
   /**
    * D+day
@@ -47,9 +47,9 @@ function MainPage() {
         <ProfileNameBox>
           <ProfileImg src="/img/IMG4.jpg" alt="main small profile img" />
           <ProfileName>
-            iameundori
+            BrideID
             <LoveImg src="/img/love.png" alt="heart img" />
-            iamjaeill
+            GroomID
           </ProfileName>
         </ProfileNameBox>
         {/* 사진 스와이퍼 부분 */}
@@ -58,9 +58,9 @@ function MainPage() {
         <LikeComponent likes={post.likes} />
         {/* 메인 메세지 부분 */}
         <ProfileName style={{ marginLeft: "20px" }}>
-          iameundori
+          BrideID
           <LoveImg src="/img/love.png" alt="heart img" />
-          iamjaeill
+          GroomID
         </ProfileName>
         <MainMsg>
           처음 만난지 {meetDate}일.

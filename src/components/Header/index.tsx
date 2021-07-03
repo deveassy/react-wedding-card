@@ -30,19 +30,19 @@ export default function Header() {
           <StoryImgBox>
             <StoryImg src="/img/IMG6.jpeg" alt="groom story img" />
           </StoryImgBox>
-          <StoryName>iamjaeill</StoryName>
+          <StoryName>GroomID</StoryName>
         </StoryLink>
         <StoryLink to={paths.bride}>
           <StoryImgBox>
             <StoryImg src="/img/IMG5.jpeg" alt="bride story img" />
           </StoryImgBox>
-          <StoryName>iameundori</StoryName>
+          <StoryName>BrideID</StoryName>
         </StoryLink>
         <StoryLink to={paths.map}>
           <StoryImgBox>
             <StoryImg src="/img/kmapicon.png" alt="map story img" />
           </StoryImgBox>
-          <StoryName>kakaomap</StoryName>
+          <StoryName>Location</StoryName>
         </StoryLink>
       </StoryLinkBox>
     </TabContainer>

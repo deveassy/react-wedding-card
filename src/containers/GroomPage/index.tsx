@@ -38,7 +38,7 @@ function GroomPage() {
     <Container>
       <ProfileNameBox>
         <ProfileImg src="/img/IMG4.jpg" alt="groom small profile img" />
-        <ProfileName>iamjaeill</ProfileName>
+        <ProfileName>GroomID</ProfileName>
       </ProfileNameBox>
       <GroomImg src="/img/IMG6.jpeg" alt="groom profile img" />
       <GroomMsg>

@@ -52,8 +52,6 @@ const MapImg = styled.img`
   border-radius: 50%;
 `;
 
-const MapName = styled.p``;
-
 export {
   PageContainer,
   HowToCome,
@@ -62,5 +60,4 @@ export {
   MapLinkBox,
   MapLink,
   MapImg,
-  MapName,
 };

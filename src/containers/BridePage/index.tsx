@@ -37,7 +37,7 @@ function BridePage() {
     <Container>
       <ProfileNameBox>
         <ProfileImg src="/img/IMG4.jpg" alt="bride small profile img" />
-        <ProfileName>iameundori</ProfileName>
+        <ProfileName>BrideID</ProfileName>
       </ProfileNameBox>
       <BrideImg src="/img/IMG5.jpeg" alt="bride profile img" />
       <BrideMsg>

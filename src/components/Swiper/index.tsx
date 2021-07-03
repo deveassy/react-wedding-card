@@ -23,7 +23,7 @@ function SwiperComponent() {
   todayDate.setHours(0);
   todayDate.setMinutes(0);
   todayDate.setSeconds(0, 0);
-  const weddingDate = new Date("2021/10/16");
+  const weddingDate = new Date("2021/12/31");
 
   /**
    * D-day
@@ -43,7 +43,7 @@ function SwiperComponent() {
         pagination={{ clickable: true }}
       >
         <SwiperSlide className="swiper-slide" style={{ position: "relative" }}>
-          <WeddingDay style={{ top: "0" }}>2021.10.16 SAT</WeddingDay>
+          <WeddingDay style={{ top: "0" }}>2021.12.31 SAT</WeddingDay>
           <WeddingDay style={{ top: "30px" }}>12:00 PM</WeddingDay>
           <WeddingCount>D - {weddingDday}</WeddingCount>
           <SlideImg

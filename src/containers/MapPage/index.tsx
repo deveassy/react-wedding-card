@@ -9,7 +9,6 @@ import {
   MapLinkBox,
   MapLink,
   MapImg,
-  MapName,
 } from "./styles";
 declare global {
   interface Window {
@@ -64,7 +63,7 @@ function MapPage() {
           // custom location info
           var infowindow = new kakao.maps.InfoWindow({
             content:
-              '<div style="width:150px;text-align:center;padding:6px 0;">은솔&재일 결혼식장</div>',
+              '<div style="width:150px;text-align:center;padding:6px 0;">Here!</div>',
           });
           infowindow.open(map, marker);
 
@@ -108,15 +107,15 @@ function MapPage() {
         <MapLinkBox>
           <MapLink href="kakaomap://look?p=37.73106585767622,126.47569078291531">
             <MapImg src="/img/kmapicon.png" alt="kakaomap logo" />
-            <MapName>카카오맵</MapName>
+            <p>카카오맵</p>
           </MapLink>
           <MapLink href="tmap://search?name=명진컨벤션웨딩부페">
             <MapImg src="/img/tmapicon.png" alt="tmap logo" />
-            <MapName>티맵</MapName>
+            <p>티맵</p>
           </MapLink>
           <MapLink href="nmap://place?lat=37.73106585767622&lng=126.47569078291531&name=%eb%aa%85%ec%a7%84%ec%bb%a8%eb%b2%a4%ec%85%98%ec%9b%a8%eb%94%a9%eb%b6%80%ed%8e%98&appname=https://doristagram--pr34-ethan-config-github-5u0z5ljj.web.app/">
             <MapImg src="/img/navermapicon.png" alt="navermap logo" />
-            <MapName>네이버맵</MapName>
+            <p>네이버맵</p>
           </MapLink>
         </MapLinkBox>
       </MapBox>
