@@ -139,7 +139,7 @@ export default function CommentComponent(props: CommentStateProps) {
               게시
             </SubmitBtn>
             <ToastMessage isActive={isActive} setIsActive={setIsActive}>
-              게시 성공!
+              게시 되었습니다
             </ToastMessage>
           </BtnInInput>
         </FormBox>

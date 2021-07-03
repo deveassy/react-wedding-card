@@ -22,10 +22,10 @@ export const Toast = styled.div<Props>`
   background-color: #9b6cbf;
   color: #fff;
   text-align: center;
-  padding: 1rem;
-  padding-left: 1.2rem;
-  padding-right: 1.2rem;
-  font-size: 1.2rem;
+  padding: 0.7rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: 0.8rem;
   -webkit-animation: ${(props) =>
     props.show
       ? css`
