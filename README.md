@@ -38,7 +38,7 @@
 
 인스타그램 피드와 최대한 비슷한 스타일링을 하려고 노력했습니다.
 
-![main](https://user-images.githubusercontent.com/58814562/124347767-2ce26c80-dc21-11eb-8b7b-3ef15329e8f4.gif)
+<img height="500" alt="스크린샷 2021-07-03 오후 5 13 43" src="https://user-images.githubusercontent.com/58814562/124347767-2ce26c80-dc21-11eb-8b7b-3ef15329e8f4.gif">
 
 - 사진을 스와이프 해서 넘겨 볼 수 있는 기능
 - 첫번째 사진에는 결혼식 날짜와 디데이 표시
@@ -50,7 +50,8 @@
 #### < Groom Page >
 
 신랑을 위한 페이지입니다.
-![groom](https://user-images.githubusercontent.com/58814562/124347829-8a76b900-dc21-11eb-935b-1fd40e9158b8.gif)
+
+<img height="500" alt="스크린샷 2021-07-03 오후 5 13 43" src="https://user-images.githubusercontent.com/58814562/124347829-8a76b900-dc21-11eb-935b-1fd40e9158b8.gif">
 
 - 개인 프로필 사진
 - 개인 인삿말
@@ -68,7 +69,9 @@
 #### < Map Page >
 
 결혼식장 찾아오는 길에 대한 페이지입니다.<br />
-![map](https://user-images.githubusercontent.com/58814562/124347892-d295db80-dc21-11eb-84eb-29ee552cbe22.gif)
+
+<img height="500" alt="스크린샷 2021-07-03 오후 5 13 43" src="https://user-images.githubusercontent.com/58814562/124347892-d295db80-dc21-11eb-84eb-29ee552cbe22.gif">
+
 메인 지도는 카카오맵을 사용하였고 하단에는 티맵, 네이버맵과 연동이 되는 링크를 넣어두었습니다.<br />
 링크 클릭 시 설치된 어플로 연결됩니다.(어플이 없을 경우엔 앱스토어로 이동)
 
