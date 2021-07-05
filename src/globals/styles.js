@@ -23,5 +23,9 @@ body {
   width: 373px;
   margin: 0 auto;
   font-family: "Lato";
+
+  color: ${(props) => props.theme.basicFont};
+  background-color: ${(props) => props.theme.basicBg};
+  position: relative;
 }
 `;

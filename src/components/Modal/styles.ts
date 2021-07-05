@@ -47,6 +47,7 @@ const ModalHeader = styled.header`
   padding: 16px 64px 16px 16px;
   background-color: #ecdbba;
   font-weight: 700;
+  color: #000;
 `;
 
 const ModalMain = styled.main`
@@ -54,9 +55,10 @@ const ModalMain = styled.main`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 16px;
+  padding: 15px;
   border-bottom: 1px solid #dee2e6;
   border-top: 1px solid #dee2e6;
+  color: #000;
 `;
 
 const ModalFooter = styled.footer`

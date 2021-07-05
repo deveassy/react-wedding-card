@@ -63,7 +63,7 @@ function MapPage() {
           // custom location info
           var infowindow = new kakao.maps.InfoWindow({
             content:
-              '<div style="width:150px;text-align:center;padding:6px 0;">Here!</div>',
+              '<div style="width:150px;text-align:center;padding:6px 0;color:#000;">Here!</div>',
           });
           infowindow.open(map, marker);
 
@@ -93,7 +93,7 @@ function MapPage() {
       </HowToCome>
       <MapBox>
         <LocationName>명진컨벤션웨딩부페</LocationName>
-        <p>인천광역시 강화군 강화읍 충렬사로 138</p>
+        <p style={{ color: "#000" }}>인천광역시 강화군 강화읍 충렬사로 138</p>
         <div id="kakaomap" style={{ width: "360px", height: "360px" }}>
           {error ? (
             <p style={{ textAlign: "center", color: "darkgrey" }}>

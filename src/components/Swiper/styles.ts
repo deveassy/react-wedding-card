@@ -5,6 +5,7 @@ const SwiperContainer = styled.div`
   align-items: center;
   justify-content: center;
   width: 373px;
+  background-color: transparent;
 `;
 
 const SlideImg = styled.img`

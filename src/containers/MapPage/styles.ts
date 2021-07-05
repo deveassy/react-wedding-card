@@ -22,11 +22,13 @@ const MapBox = styled.div`
   justify-content: center;
   width: 370px;
   margin: 10px;
-  background-color: #f6f6f6;
+  background-color: #f7f3e9;
+  border-radius: 2px;
 `;
 
 const LocationName = styled.h1`
   margin-bottom: -10px;
+  color: #000;
 `;
 
 const MapLinkBox = styled.div`

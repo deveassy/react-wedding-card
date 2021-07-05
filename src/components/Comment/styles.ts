@@ -52,6 +52,7 @@ const BtnInInput = styled.div`
   margin-bottom: 5px;
   border: 1px solid #ccc;
   border-radius: 30px;
+  background-color: #fff;
 `;
 
 const ContentInput = styled.input`
