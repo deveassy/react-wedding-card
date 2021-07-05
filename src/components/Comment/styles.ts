@@ -29,37 +29,42 @@ const ForUserMsg = styled.div`
 `;
 
 const CommentFooter = styled.div`
+  width: 100%;
   margin-top: 10px;
   border-top: 1px solid #ccc;
 `;
 
-const FormBox = styled.form``;
+const FormBox = styled.form`
+  margin: 0 10px;
+`;
 
 const NameInput = styled.input`
-  width: 120px;
+  width: 30%;
   padding: 10px 25px;
   margin-bottom: 5px;
   border: 1px solid #ccc;
   border-radius: 20px;
   outline: none;
+  background-color: ${(props) => props.theme.basicBg};
 `;
 
 const BtnInInput = styled.div`
   position: relative;
   justify-content: space-between;
-  width: 310px;
+  width: 90%;
   padding: 5px 15px;
   margin-bottom: 5px;
   border: 1px solid #ccc;
   border-radius: 30px;
-  background-color: #fff;
+  background-color: ${(props) => props.theme.basicBg};
 `;
 
 const ContentInput = styled.input`
-  width: 250px;
+  width: 85%;
   padding: 10px;
   border: none;
   outline: none;
+  background-color: ${(props) => props.theme.basicBg};
 `;
 
 const SubmitBtn = styled.button`

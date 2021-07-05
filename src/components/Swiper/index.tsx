@@ -46,11 +46,7 @@ function SwiperComponent() {
           <WeddingDay style={{ top: "0" }}>2021.12.31 SAT</WeddingDay>
           <WeddingDay style={{ top: "30px" }}>12:00 PM</WeddingDay>
           <WeddingCount>D - {weddingDday}</WeddingCount>
-          <SlideImg
-            src="/img/mainIMG.jpg"
-            alt="main img"
-            style={{ opacity: "0.2" }}
-          />
+          <SlideImg src="/img/mainIMG.jpg" alt="main img" />
         </SwiperSlide>
         {sliders.map((slider) => {
           return (

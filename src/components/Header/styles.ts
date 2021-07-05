@@ -16,8 +16,8 @@ const LogoLinkBox = styled.div`
   position: fixed;
   z-index: 80;
   top: 0;
-  width: 353px;
-  padding: 20px 0 10px 20px;
+  width: 100%;
+  padding: 20px 20px 10px 20px;
   background-color: ${(props) => props.theme.basicBg};
   border-bottom: 0.3px solid #f1f3f5;
 `;
