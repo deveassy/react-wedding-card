@@ -54,6 +54,10 @@ const MapImg = styled.img`
   border-radius: 50%;
 `;
 
+const AddressDescription = styled.p`
+  color: ${(props) => props.theme.basicFont};
+`;
+
 export {
   PageContainer,
   HowToCome,
@@ -62,4 +66,5 @@ export {
   MapLinkBox,
   MapLink,
   MapImg,
+  AddressDescription,
 };

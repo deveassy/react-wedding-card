@@ -9,6 +9,7 @@ import {
   MapLinkBox,
   MapLink,
   MapImg,
+  AddressDescription,
 } from "./styles";
 declare global {
   interface Window {
@@ -47,30 +48,30 @@ function MapPage() {
       // create address-coordinates change obj
       const geocoder = new kakao.maps.services.Geocoder();
       // research coordinates from address
-      geocoder.addressSearch("인천 강화군 강화읍 충렬사로 138", function (
-        result: any,
-        status: any
-      ) {
-        if (status === kakao.maps.services.Status.OK) {
-          var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+      geocoder.addressSearch(
+        "인천 강화군 강화읍 충렬사로 138",
+        function (result: any, status: any) {
+          if (status === kakao.maps.services.Status.OK) {
+            var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
 
-          // indication marker
-          var marker = new kakao.maps.Marker({
-            map: map,
-            position: coords,
-          });
+            // indication marker
+            var marker = new kakao.maps.Marker({
+              map: map,
+              position: coords,
+            });
 
-          // custom location info
-          var infowindow = new kakao.maps.InfoWindow({
-            content:
-              '<div style="width:150px;text-align:center;padding:6px 0;color:#000;">Here!</div>',
-          });
-          infowindow.open(map, marker);
+            // custom location info
+            var infowindow = new kakao.maps.InfoWindow({
+              content:
+                '<div style="width:150px;text-align:center;padding:6px 0;color:#000;">Here!</div>',
+            });
+            infowindow.open(map, marker);
 
-          // move to center
-          map.setCenter(coords);
+            // move to center
+            map.setCenter(coords);
+          }
         }
-      });
+      );
     } catch (error) {
       console.log("cannot use kakaomap api, please check your URL");
       setError(true);
@@ -91,9 +92,9 @@ function MapPage() {
       <HowToCome style={{ fontSize: "1.2em" }}>오시는 길</HowToCome>
       <MapBox>
         <LocationName>명진컨벤션웨딩부페</LocationName>
-        <p style={{ color: "${props => props.theme.basicFont}" }}>
+        <AddressDescription>
           인천광역시 강화군 강화읍 충렬사로 138
-        </p>
+        </AddressDescription>
         <div id="kakaomap" style={{ width: "360px", height: "360px" }}>
           {error ? (
             <p style={{ textAlign: "center", color: "darkgrey" }}>
