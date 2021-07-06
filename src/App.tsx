@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyle } from "./globals/styles.js";
 import RootRoute from "./routes";
@@ -7,17 +7,14 @@ import { createStore } from "redux";
 import { Provider, useDispatch } from "react-redux";
 import rootReducer from "./modules";
 import { updatePost } from "./modules/post";
-import { darkTheme, lightTheme } from "./globals/DefaultTheme";
+import { darkTheme, lightTheme } from "./globals/theme";
 import SwitchButton from "./components/SwitchButton";
+import useThemeMode from "./hooks/useThemeMode";
 
 const store = createStore(rootReducer);
 
 function RenderApp() {
-  const [isDark, setIsDark] = useState(false);
-
-  const changeTheme = () => {
-    setIsDark(!isDark);
-  };
+  const { themeMode, switchThemeMode } = useThemeMode();
 
   const dispatch = useDispatch();
   useEffect(() => {
@@ -35,8 +32,8 @@ function RenderApp() {
   }, [dispatch]);
 
   return (
-    <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
-      <SwitchButton changeTheme={changeTheme} isDark={isDark} />
+    <ThemeProvider theme={themeMode ? darkTheme : lightTheme}>
+      <SwitchButton changeTheme={switchThemeMode} isDark={themeMode} />
       {/* 글로벌 스타일 정의 */}
       <GlobalStyle />
       {/* 페이지 라우트 */}
