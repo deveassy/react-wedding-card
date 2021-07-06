@@ -78,6 +78,12 @@ function MapPage() {
     }
   }, [location]);
 
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+  const notFoundLink = () => {
+    alert("모바일로 시도해주세요!");
+  };
+
   return (
     <PageContainer>
       <HowToCome
@@ -106,15 +112,30 @@ function MapPage() {
           아래 아이콘을 클릭하면 앱으로 연결됩니다.
         </div>
         <MapLinkBox>
-          <MapLink href="kakaomap://look?p=37.73106585767622,126.47569078291531">
+          <MapLink
+            href={
+              isMobile
+                ? "kakaomap://look?p=37.73106585767622,126.47569078291531"
+                : "http://kko.to/bakejoHfM"
+            }
+          >
             <MapImg src="/img/kmapicon.png" alt="kakaomap logo" />
             <p>카카오맵</p>
           </MapLink>
-          <MapLink href="tmap://search?name=명진컨벤션웨딩부페">
+          <MapLink
+            href={isMobile ? "tmap://search?name=명진컨벤션웨딩부페" : "map"}
+            onClick={notFoundLink}
+          >
             <MapImg src="/img/tmapicon.png" alt="tmap logo" />
             <p>티맵</p>
           </MapLink>
-          <MapLink href="nmap://place?lat=37.73106585767622&lng=126.47569078291531&name=%eb%aa%85%ec%a7%84%ec%bb%a8%eb%b2%a4%ec%85%98%ec%9b%a8%eb%94%a9%eb%b6%80%ed%8e%98&appname=https://doristagram--pr34-ethan-config-github-5u0z5ljj.web.app/">
+          <MapLink
+            href={
+              isMobile
+                ? "nmap://place?lat=37.73106585767622&lng=126.47569078291531&name=%eb%aa%85%ec%a7%84%ec%bb%a8%eb%b2%a4%ec%85%98%ec%9b%a8%eb%94%a9%eb%b6%80%ed%8e%98&appname=https://doristagram--pr34-ethan-config-github-5u0z5ljj.web.app/"
+                : "https://m.map.naver.com/search2/search.naver?query=%EB%AA%85%EC%A7%84%EC%9B%A8%EB%94%A9%EC%BB%A8%EB%B2%A4%EC%85%98&sm=hty&style=v5#/map/1/16550040"
+            }
+          >
             <MapImg src="/img/navermapicon.png" alt="navermap logo" />
             <p>네이버맵</p>
           </MapLink>
