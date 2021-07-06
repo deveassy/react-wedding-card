@@ -12,7 +12,7 @@ const HowToCome = styled.div`
   justify-content: center;
   width: 120px;
   padding: 10px 0;
-  color: #ccc;
+  color: ${(props) => props.theme.basicFont};
 `;
 
 const MapBox = styled.div`
@@ -20,15 +20,15 @@ const MapBox = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 370px;
-  margin: 10px;
-  background-color: #f7f3e9;
+  width: 100%;
+  /* margin: 10px; */
+  background-color: ${(props) => props.theme.basicContentBox};
   border-radius: 2px;
 `;
 
 const LocationName = styled.h1`
   margin-bottom: -10px;
-  color: #000;
+  color: ${(props) => props.theme.basicFont};
 `;
 
 const MapLinkBox = styled.div`
@@ -44,7 +44,7 @@ const MapLink = styled.a`
   align-items: center;
   margin: 20px;
   text-decoration: none;
-  color: #000;
+  color: ${(props) => props.theme.basicFont};
 `;
 
 const MapImg = styled.img`
@@ -52,6 +52,10 @@ const MapImg = styled.img`
   height: 60px;
   border: 1px solid #ccc;
   border-radius: 50%;
+`;
+
+const AddressDescription = styled.p`
+  color: ${(props) => props.theme.basicFont};
 `;
 
 export {
@@ -62,4 +66,5 @@ export {
   MapLinkBox,
   MapLink,
   MapImg,
+  AddressDescription,
 };
