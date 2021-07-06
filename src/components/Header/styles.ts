@@ -7,7 +7,6 @@ const FlexDiv = styled.div`
 `;
 
 const TabContainer = styled.div`
-  position: relative;
   padding-top: 70px;
   border-bottom: 0.5px solid #ccc;
 `;
@@ -16,16 +15,16 @@ const LogoLinkBox = styled.div`
   position: fixed;
   z-index: 80;
   top: 0;
-  width: 100%;
-  padding: 20px 20px 10px 20px;
+  min-width: 500px;
   background-color: ${(props) => props.theme.basicBg};
   border-bottom: 0.3px solid #f1f3f5;
 `;
 
 const LogoLink = styled(Link)`
   display: flex;
-  flex-direction: row;
   align-items: center;
+  width: 230px;
+  margin: 15px 20px;
   text-decoration: none;
   font-family: "Marker felt";
   font-size: 2em;
