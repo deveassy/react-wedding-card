@@ -88,12 +88,12 @@ function MapPage() {
       >
         Location
       </HowToCome>
-      <HowToCome style={{ fontSize: "1.2em", color: "#777" }}>
-        오시는 길
-      </HowToCome>
+      <HowToCome style={{ fontSize: "1.2em" }}>오시는 길</HowToCome>
       <MapBox>
         <LocationName>명진컨벤션웨딩부페</LocationName>
-        <p style={{ color: "#000" }}>인천광역시 강화군 강화읍 충렬사로 138</p>
+        <p style={{ color: "${props => props.theme.basicFont}" }}>
+          인천광역시 강화군 강화읍 충렬사로 138
+        </p>
         <div id="kakaomap" style={{ width: "360px", height: "360px" }}>
           {error ? (
             <p style={{ textAlign: "center", color: "darkgrey" }}>
@@ -101,7 +101,7 @@ function MapPage() {
             </p>
           ) : undefined}
         </div>
-        <div style={{ marginTop: "10px", fontSize: "0.7em", color: "#888" }}>
+        <div style={{ marginTop: "10px", fontSize: "0.7em", color: "#999" }}>
           아래 아이콘을 클릭하면 앱으로 연결됩니다.
         </div>
         <MapLinkBox>

@@ -5,7 +5,7 @@ export const lightTheme = {
   basicBtnBg: "#E1F2FB",
   secondBg: "#ecdbba",
   basicFont: "#000",
-  basicContentBox: "#fff",
+  basicContentBox: "#f7f3e9",
   basicLine: "#333",
 };
 
@@ -14,6 +14,6 @@ export const darkTheme: DefaultTheme = {
   basicBtnBg: "#3C5186",
   secondBg: "#6F9EAF",
   basicFont: "#ddd",
-  basicContentBox: "#828282",
+  basicContentBox: "#423F3E",
   basicLine: "#ccc",
 };

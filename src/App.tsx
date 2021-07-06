@@ -34,9 +34,7 @@ function RenderApp() {
   return (
     <ThemeProvider theme={themeMode ? darkTheme : lightTheme}>
       <SwitchButton changeTheme={switchThemeMode} isDark={themeMode} />
-      {/* 글로벌 스타일 정의 */}
       <GlobalStyle />
-      {/* 페이지 라우트 */}
       <RootRoute />
     </ThemeProvider>
   );
