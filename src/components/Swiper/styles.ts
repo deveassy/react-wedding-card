@@ -5,11 +5,17 @@ const SwiperContainer = styled.div`
   align-items: center;
   justify-content: center;
   width: 373px;
+  margin: 0 auto;
+  background-color: transparent;
 `;
 
 const SlideImg = styled.img`
   width: 100%;
   height: 100%;
+  opacity: ${(props) => {
+    if (props.alt === "main img") return "0.3";
+    return null;
+  }};
 `;
 const WeddingDay = styled.p`
   z-index: 100;
@@ -19,7 +25,7 @@ const WeddingDay = styled.p`
   transform: translateX(-50%);
   font-family: "East Sea Dokdo";
   font-size: 2.3em;
-  color: #766161;
+  color: ${(props) => props.theme.basicFont};
 `;
 const WeddingCount = styled.p`
   z-index: 100;

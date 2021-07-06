@@ -1,3 +1,6 @@
+/**
+ * Post Scheme
+ */
 type PostTypes = {
   createdAt: string;
   location: {
@@ -8,6 +11,9 @@ type PostTypes = {
   likes: number;
 };
 
+/**
+ * Comment Scheme
+ */
 type CommentType = {
   text: string;
   username: string;

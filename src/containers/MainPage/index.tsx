@@ -48,7 +48,7 @@ function MainPage() {
           <ProfileImg src="/img/IMG4.jpg" alt="main small profile img" />
           <ProfileName>
             BrideID
-            <LoveImg src="/img/love.png" alt="heart img" />
+            <LoveImg src="/img/Rlove.png" alt="heart img" />
             GroomID
           </ProfileName>
         </ProfileNameBox>
@@ -59,7 +59,7 @@ function MainPage() {
         {/* 메인 메세지 부분 */}
         <ProfileName style={{ marginLeft: "20px" }}>
           BrideID
-          <LoveImg src="/img/love.png" alt="heart img" />
+          <LoveImg src="/img/Rlove.png" alt="heart img" />
           GroomID
         </ProfileName>
         <MainMsg>
