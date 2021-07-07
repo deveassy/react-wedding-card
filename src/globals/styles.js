@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 import Dokdo from "../globals/fonts/EastSeaDokdo-Regular.ttf";
 import Lato from "../globals/fonts/Lato-Regular.ttf";
 import Marker from "../globals/fonts/markerfelt.ttf";
@@ -27,4 +27,18 @@ body {
   color: ${(props) => props.theme.basicFont};
   background-color: ${(props) => props.theme.basicBg};
   }
+`;
+
+export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background-color: #ced4da;
+`;
+
+export const Img = styled.img`
+  width: 80%;
 `;

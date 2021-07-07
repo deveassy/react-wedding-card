@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import { ThemeProvider } from "styled-components";
-import { GlobalStyle } from "./globals/styles.js";
+import { GlobalStyle, Container, Img } from "./globals/styles.js";
 import RootRoute from "./routes";
 
 import { createStore } from "redux";
-import { Provider, useDispatch } from "react-redux";
-import rootReducer from "./modules";
+import { Provider, useDispatch, useSelector } from "react-redux";
+import rootReducer, { RootState } from "./modules";
 import { updatePost } from "./modules/post";
 import { darkTheme, lightTheme } from "./globals/theme";
 import SwitchButton from "./components/SwitchButton";
@@ -30,6 +30,15 @@ function RenderApp() {
         }
       });
   }, [dispatch]);
+
+  const post = useSelector((state: RootState) => state.postReducer);
+  if (!post)
+    return (
+      <Container>
+        <Img src="/img/weddingPhoto.jpeg" alt="메인 로더 사진" />
+        <h2>WELCOME</h2>
+      </Container>
+    );
 
   return (
     <ThemeProvider theme={themeMode ? darkTheme : lightTheme}>
