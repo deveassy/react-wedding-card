@@ -1,11 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyle, Container, Img } from "./globals/styles.js";
 import RootRoute from "./routes";
 
 import { createStore } from "redux";
-import { Provider, useDispatch, useSelector } from "react-redux";
-import rootReducer, { RootState } from "./modules";
+import { Provider, useDispatch } from "react-redux";
+import rootReducer from "./modules";
 import { updatePost } from "./modules/post";
 import { darkTheme, lightTheme } from "./globals/theme";
 import SwitchButton from "./components/SwitchButton";
@@ -15,8 +15,10 @@ const store = createStore(rootReducer);
 
 function RenderApp() {
   const { themeMode, switchThemeMode } = useThemeMode();
+  const [isInitComplete, setInitComplete] = useState(false);
 
   const dispatch = useDispatch();
+
   useEffect(() => {
     const postId = "v6subHi6XYmqJn6xypq2";
     fetch(
@@ -27,12 +29,12 @@ function RenderApp() {
         console.log(json);
         if (json.status === 200) {
           dispatch(updatePost(json.result as PostTypes));
+          setInitComplete(true);
         }
       });
   }, [dispatch]);
 
-  const post = useSelector((state: RootState) => state.postReducer);
-  if (!post)
+  if (!isInitComplete)
     return (
       <Container>
         <Img src="/img/weddingPhoto.png" alt="메인 로더 사진" />
@@ -43,7 +45,7 @@ function RenderApp() {
     <ThemeProvider theme={themeMode ? darkTheme : lightTheme}>
       <SwitchButton changeTheme={switchThemeMode} isDark={themeMode} />
       <GlobalStyle />
-      <RootRoute />
+      <RootRoute initComplete={isInitComplete} />
     </ThemeProvider>
   );
 }

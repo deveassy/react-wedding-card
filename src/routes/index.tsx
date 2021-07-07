@@ -7,11 +7,14 @@ import MainRoutes from "./main";
 /**
  * 최상위 라우트
  */
-export default function AppRoute() {
+interface IAppRoute {
+  initComplete: boolean;
+}
+export default function AppRoute({ initComplete }: IAppRoute) {
   return (
     <BrowserRouter basename="main">
       <Switch>
-        <Route path="/" component={MainRoutes} />
+        {initComplete && <Route path="/" component={MainRoutes} />}
         <Route component={NotFound} />
       </Switch>
     </BrowserRouter>

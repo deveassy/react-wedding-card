@@ -40,5 +40,5 @@ export const Container = styled.div`
 `;
 
 export const Img = styled.img`
-  width: 80%;
+  width: 375px;
 `;
