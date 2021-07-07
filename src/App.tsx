@@ -35,8 +35,7 @@ function RenderApp() {
   if (!post)
     return (
       <Container>
-        <Img src="/img/weddingPhoto.jpeg" alt="메인 로더 사진" />
-        <h2>WELCOME</h2>
+        <Img src="/img/weddingPhoto.png" alt="메인 로더 사진" />
       </Container>
     );
 
