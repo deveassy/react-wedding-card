@@ -36,7 +36,6 @@ function MainPage() {
   if (!post)
     return (
       <Loader>
-        WELCOME!
         <Spinner />
       </Loader>
     );
