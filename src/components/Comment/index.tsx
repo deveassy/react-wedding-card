@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import { addComment } from "../../modules/post";
 import ToastMessage from "../ToastMessage";
@@ -10,7 +10,7 @@ import {
   CommentFooter,
   FormBox,
   NameInput,
-  BtnInInput,
+  BtnInInput as BtnInInputBox,
   ContentInput,
   SubmitBtn,
   SingleComment,
@@ -55,6 +55,8 @@ export default function CommentComponent(props: CommentStateProps) {
 
   const [visible, setVisible] = useState(false);
   const [isActive, setIsActive] = useState(false);
+
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -105,6 +107,13 @@ export default function CommentComponent(props: CommentStateProps) {
     setVisible(!visible);
   };
 
+  useEffect(() => {
+    if (visible) {
+      window.scrollTo(0, document.body.scrollHeight);
+      if (inputRef.current) inputRef.current?.focus();
+    }
+  }, [visible]);
+
   return (
     <Container>
       <CommentBox>
@@ -117,18 +126,19 @@ export default function CommentComponent(props: CommentStateProps) {
             })
           : null}
       </CommentBox>
-      <CommentFooter>
+      <CommentFooter visible={visible}>
         <ForUserMsg>
           신랑,신부에게 축하의 메세지를 남겨주세요! (게시 후엔 삭제 불가능)
         </ForUserMsg>
         <FormBox onSubmit={handleSubmit}>
           <NameInput
+            ref={inputRef}
             name="username"
             placeholder="이름을 넣어주세요"
             value={inputs.username}
             onChange={handleChange}
           />
-          <BtnInInput>
+          <BtnInInputBox>
             <ContentInput
               name="content"
               placeholder="댓글 달기..."
@@ -141,7 +151,7 @@ export default function CommentComponent(props: CommentStateProps) {
             <ToastMessage isActive={isActive} setIsActive={setIsActive}>
               게시 되었습니다
             </ToastMessage>
-          </BtnInInput>
+          </BtnInInputBox>
         </FormBox>
       </CommentFooter>
     </Container>

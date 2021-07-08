@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+type FooterProps = {
+  visible: boolean;
+};
+
 const Container = styled.div`
   display: flex;
   justify-content: center;
@@ -28,14 +32,21 @@ const ForUserMsg = styled.div`
   font-size: 0.8em;
 `;
 
-const CommentFooter = styled.div`
+const CommentFooter = styled.div<FooterProps>`
+  display: ${(props) => {
+    if (props.visible === false) return "none";
+  }};
+  visibility: ${(props) => {
+    if (props.visible === true) return "visible";
+    if (props.visible === false) return "hidden";
+  }};
   width: 100%;
   margin-top: 10px;
   border-top: 1px solid #ccc;
 `;
 
 const FormBox = styled.form`
-  margin: 0 10px;
+  padding: 0 10px;
 `;
 
 const NameInput = styled.input`
@@ -48,10 +59,10 @@ const NameInput = styled.input`
   background-color: ${(props) => props.theme.basicBg};
 `;
 
-const BtnInInput = styled.div`
+const BtnInInputBox = styled.div`
   position: relative;
   justify-content: space-between;
-  width: 90%;
+  width: inherit;
   padding: 5px 15px;
   margin-bottom: 5px;
   border: 1px solid #ccc;
@@ -60,7 +71,7 @@ const BtnInInput = styled.div`
 `;
 
 const ContentInput = styled.input`
-  width: 85%;
+  width: 80%;
   padding: 10px;
   border: none;
   outline: none;
@@ -68,7 +79,6 @@ const ContentInput = styled.input`
 `;
 
 const SubmitBtn = styled.button`
-  padding: 5px;
   border: none;
   background-color: transparent;
   color: #52a6df;
@@ -96,7 +106,7 @@ export {
   CommentFooter,
   FormBox,
   NameInput,
-  BtnInInput,
+  BtnInInputBox as BtnInInput,
   ContentInput,
   SubmitBtn,
   SingleComment,
