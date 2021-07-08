@@ -43,40 +43,61 @@ const GroomMsg = styled.p`
 
 const AccountBox = styled(FlexDiv)``;
 
-const AccountButton = styled.button`
-  width: 70px;
-  height: 35px;
-  padding: 10px;
-  margin-left: 20px;
+const MoneyButton = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
   border: 0;
-  border-radius: 50%;
-  background-color: #b6c9f0;
+  background-color: transparent;
+  background-image: linear-gradient(180deg, #c2255c, #ff922b, #fab005);
+  background-origin: border-box;
+  background-clip: content-box;
   cursor: pointer;
 `;
+const MoneyImg = styled.img`
+  width: 100px;
+  margin: 3px;
+  border: 3px solid ${(props) => props.theme.basicBg};
+  border-radius: 3px;
+`;
 
-const AccountMsg = styled.p`
+const AccountMsg = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 80%;
-  padding-top: 20px;
   font-size: 0.7em;
   border-top: 1px solid #ccc;
 `;
 
+const MainContainer = styled(FlexDiv)`
+  flex-direction: column;
+  justify-content: center;
+  color: ${(props) => props.theme.basicFont};
+`;
+
+const NumContainer = styled(FlexDiv)`
+  justify-content: center;
+  width: 100%;
+  height: 50px;
+`;
+
 const AccountNum = styled.input`
+  width: 80px;
+  margin-left: 10px;
   border: 0;
   outline: none;
+  background-color: transparent;
+  color: ${(props) => props.theme.basicFont};
 `;
 
 const CopyButton = styled.button`
-  position: absolute;
-  right: 50px;
-  margin-left: 10px;
-  padding: 5px;
+  padding: 5px 10px;
   border: 1px solid #ccc;
   border-radius: 3px;
-  background-color: transparent;
+  cursor: pointer;
 `;
 
 export {
@@ -88,7 +109,10 @@ export {
   GroomMsg,
   AccountMsg,
   AccountBox,
-  AccountButton,
+  MoneyButton,
+  MoneyImg,
+  MainContainer,
+  NumContainer,
   AccountNum,
   CopyButton,
 };

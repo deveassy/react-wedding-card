@@ -11,13 +11,14 @@ import {
   AccountBox,
   MoneyButton,
   MoneyImg,
+  MainContainer,
+  NumContainer,
   AccountNum,
   CopyButton,
 } from "./styles";
 
 function BridePage() {
   const [modalOpen, setModalOpen] = useState(false);
-  const [copy, setCopy] = useState("복사");
 
   const openModal = () => {
     setModalOpen(true);
@@ -32,7 +33,8 @@ function BridePage() {
     obj.select(); //인풋 컨트롤의 내용 전체 선택
     document.execCommand("copy"); //복사
     obj.setSelectionRange(0, 0); //선택영역 초기화
-    setCopy("완료!");
+
+    (document.getElementById("button") as HTMLInputElement).disabled = true;
   };
   return (
     <Container>
@@ -66,11 +68,24 @@ function BridePage() {
           active
           open={modalOpen}
           close={closeModal}
-          header="계좌번호 보기"
+          header="/img/emoticon1.png"
+          footer="보내러가자~"
         >
-          <p>우리</p>
-          <AccountNum type="text" id="numInput" value="123456700" readOnly />
-          <CopyButton onClick={handleCopy}>{copy}</CopyButton>
+          <MainContainer>
+            <p style={{ margin: 0 }}>감사합니다. 잘 쓸게요!</p>
+            <NumContainer>
+              우리
+              <AccountNum
+                type="text"
+                id="numInput"
+                value="123456700"
+                readOnly
+              />
+              <CopyButton onClick={handleCopy} id="button">
+                복사
+              </CopyButton>
+            </NumContainer>
+          </MainContainer>
         </Modal>
       </AccountBox>
     </Container>

@@ -31,7 +31,7 @@ const OpenModal = styled.section<OpenModalProps>`
   max-width: 450px;
   margin: 0 auto;
   border-radius: 0.3rem;
-  background-color: #fff;
+  background-color: ${(props) => props.theme.basicContentBox};
   overflow: hidden;
   ${(props) => {
     if (props.active) {
@@ -44,21 +44,22 @@ const OpenModal = styled.section<OpenModalProps>`
 
 const ModalHeader = styled.header`
   position: relative;
-  padding: 16px 64px 16px 16px;
-  background-color: #ecdbba;
-  font-weight: 700;
-  color: #000;
+  padding: 16px 30px 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const ModalMain = styled.main`
   position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 15px;
-  border-bottom: 1px solid #dee2e6;
-  border-top: 1px solid #dee2e6;
-  color: #000;
+  border-bottom: 1px solid ${(props) => props.theme.basicLine};
+  border-top: 1px solid ${(props) => props.theme.basicLine};
+  color: ${(props) => props.theme.basicFont};
 `;
 
 const ModalFooter = styled.footer`
@@ -67,11 +68,12 @@ const ModalFooter = styled.footer`
 `;
 
 const CloseButton = styled.button`
-  padding: 6px 12px;
+  padding: 8px 70px;
   color: #fff;
   background-color: #687980;
   border-radius: 5px;
   font-size: 13px;
+  cursor: pointer;
 `;
 
 const ModalShow = keyframes`
@@ -85,6 +87,10 @@ const ModalShow = keyframes`
   }
 `;
 
+const EmoticonImg = styled.img`
+  width: 170px;
+`;
+
 export {
   ModalContainer,
   OpenModal,
@@ -92,4 +98,5 @@ export {
   ModalMain,
   ModalFooter,
   CloseButton,
+  EmoticonImg,
 };

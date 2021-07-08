@@ -9,14 +9,16 @@ import {
   GroomMsg,
   AccountMsg,
   AccountBox,
-  AccountButton,
+  MoneyButton,
+  MoneyImg,
+  MainContainer,
+  NumContainer,
   AccountNum,
   CopyButton,
 } from "./styles";
 
 function GroomPage() {
   const [modalOpen, setModalOpen] = useState(false);
-  const [copy, setCopy] = useState("복사");
 
   const openModal = () => {
     setModalOpen(true);
@@ -31,7 +33,8 @@ function GroomPage() {
     obj.select(); //인풋 컨트롤의 내용 전체 선택
     document.execCommand("copy"); //복사
     obj.setSelectionRange(0, 0); //선택영역 초기화
-    setCopy("완료!");
+
+    (document.getElementById("button") as HTMLInputElement).disabled = true;
   };
 
   return (
@@ -50,19 +53,40 @@ function GroomPage() {
         부디 저희의 기쁜 날에 함께해주시는 <br />
         모두에게도 기쁜 날이 될 수 있길 바랍니다.
       </GroomMsg>
-      <AccountMsg>신랑에게 축하의 마음 담아 축의금 보내기</AccountMsg>
+      <AccountMsg>
+        <p>코로나는 도대체 언제 끝날까요 ㅠㅠ?</p>
+        <p style={{ margin: 0 }}>가긴 어렵지만 축하해주고 싶으신 분들께서는</p>
+      </AccountMsg>
       <AccountBox>
-        <p>신랑 측 계좌번호</p>
-        <AccountButton onClick={openModal}>보기</AccountButton>
+        <MoneyButton onClick={openModal}>
+          <MoneyImg
+            src="/img/money.jpeg"
+            alt="money img"
+            style={{ width: "100px" }}
+          />
+        </MoneyButton>
         <Modal
           active
           open={modalOpen}
           close={closeModal}
-          header="계좌번호 보기"
+          header="/img/emoticon2.png"
+          footer="보내러가자~"
         >
-          <p>신한</p>
-          <AccountNum type="text" id="numInput" value="123456700" readOnly />
-          <CopyButton onClick={handleCopy}>{copy}</CopyButton>
+          <MainContainer>
+            <p style={{ margin: 0 }}>감사합니다. 잘 쓸게요!</p>
+            <NumContainer>
+              우리
+              <AccountNum
+                type="text"
+                id="numInput"
+                value="123456700"
+                readOnly
+              />
+              <CopyButton onClick={handleCopy} id="button">
+                복사
+              </CopyButton>
+            </NumContainer>
+          </MainContainer>
         </Modal>
       </AccountBox>
     </Container>

@@ -58,7 +58,6 @@ const MoneyButton = styled.button`
 const MoneyImg = styled.img`
   width: 100px;
   margin: 3px;
-  /* border: 3px solid #fff; */
   border: 3px solid ${(props) => props.theme.basicBg};
   border-radius: 3px;
 `;
@@ -73,19 +72,32 @@ const AccountMsg = styled.div`
   border-top: 1px solid #ccc;
 `;
 
+const MainContainer = styled(FlexDiv)`
+  flex-direction: column;
+  justify-content: center;
+  color: ${(props) => props.theme.basicFont};
+`;
+
+const NumContainer = styled(FlexDiv)`
+  justify-content: center;
+  width: 100%;
+  height: 50px;
+`;
+
 const AccountNum = styled.input`
+  width: 80px;
+  margin-left: 10px;
   border: 0;
   outline: none;
+  background-color: transparent;
+  color: ${(props) => props.theme.basicFont};
 `;
 
 const CopyButton = styled.button`
-  position: absolute;
-  right: 50px;
-  margin-left: 10px;
-  padding: 5px;
+  padding: 5px 10px;
   border: 1px solid #ccc;
   border-radius: 3px;
-  background-color: transparent;
+  cursor: pointer;
 `;
 
 export {
@@ -99,6 +111,8 @@ export {
   AccountBox,
   MoneyButton,
   MoneyImg,
+  MainContainer,
+  NumContainer,
   AccountNum,
   CopyButton,
 };
