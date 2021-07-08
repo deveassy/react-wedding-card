@@ -9,7 +9,8 @@ import {
   BrideMsg,
   AccountMsg,
   AccountBox,
-  AccountButton,
+  MoneyButton,
+  MoneyImg,
   AccountNum,
   CopyButton,
 } from "./styles";
@@ -49,10 +50,18 @@ function BridePage() {
         부디 저희의 기쁜 날에 함께해주시는 <br />
         모두에게도 기쁜 날이 될 수 있길 바랍니다.
       </BrideMsg>
-      <AccountMsg>신부에게 축하의 마음 담아 축의금 보내기</AccountMsg>
+      <AccountMsg>
+        <p>코로나는 도대체 언제 끝날까요 ㅠㅠ?</p>
+        <p style={{ margin: 0 }}>가긴 어렵지만 축하해주고 싶으신 분들께서는</p>
+      </AccountMsg>
       <AccountBox>
-        <p>신부 측 계좌번호</p>
-        <AccountButton onClick={openModal}>보기</AccountButton>
+        <MoneyButton onClick={openModal}>
+          <MoneyImg
+            src="/img/money.jpeg"
+            alt="money img"
+            style={{ width: "100px" }}
+          />
+        </MoneyButton>
         <Modal
           active
           open={modalOpen}

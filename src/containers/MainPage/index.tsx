@@ -7,7 +7,6 @@ import LikeComponent from "../../components/Like";
 import Spinner from "../../components/Spinner";
 
 import {
-  Loader,
   FeedBox,
   ProfileNameBox,
   ProfileImg,
@@ -33,12 +32,7 @@ function MainPage() {
 
   const post = useSelector((state: RootState) => state.postReducer);
 
-  if (!post)
-    return (
-      <Loader>
-        <Spinner />
-      </Loader>
-    );
+  if (!post) return <Spinner />;
 
   return (
     <Fragment>

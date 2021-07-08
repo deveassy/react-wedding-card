@@ -22,6 +22,7 @@ export const GlobalStyle = createGlobalStyle`
 body {
   max-width: 500px;
   margin: 0 auto;
+  padding-bottom: 20px;
   font-family: "Lato";
 
   color: ${(props) => props.theme.basicFont};

@@ -43,23 +43,32 @@ const BrideMsg = styled.p`
 
 const AccountBox = styled(FlexDiv)``;
 
-const AccountButton = styled.button`
-  width: 70px;
-  height: 35px;
-  padding: 10px;
-  margin-left: 20px;
+const MoneyButton = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
   border: 0;
-  border-radius: 50%;
-  background-color: #ffcead;
+  background-color: transparent;
+  background-image: linear-gradient(180deg, #c2255c, #ff922b, #fab005);
+  background-origin: border-box;
+  background-clip: content-box;
   cursor: pointer;
 `;
+const MoneyImg = styled.img`
+  width: 100px;
+  margin: 3px;
+  /* border: 3px solid #fff; */
+  border: 3px solid ${(props) => props.theme.basicBg};
+  border-radius: 3px;
+`;
 
-const AccountMsg = styled.p`
+const AccountMsg = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 80%;
-  padding-top: 20px;
   font-size: 0.7em;
   border-top: 1px solid #ccc;
 `;
@@ -88,7 +97,8 @@ export {
   BrideMsg,
   AccountMsg,
   AccountBox,
-  AccountButton,
+  MoneyButton,
+  MoneyImg,
   AccountNum,
   CopyButton,
 };

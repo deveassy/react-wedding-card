@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { SpinnerBox } from "./styles";
 
-export default function Loader() {
+export default function Spinner() {
   return (
     <Fragment>
       <SpinnerBox />
