@@ -12,9 +12,9 @@ export default function SwitchButton(props: SwitchProps) {
     <SContainer>
       <Container onClick={changeTheme}>
         {isDark ? (
-          <ModeImg src="/img/moon.png" alt="" />
+          <ModeImg src="/img/moon.png" alt="dark img" />
         ) : (
-          <ModeImg src="/img/sun.png" alt="" />
+          <ModeImg src="/img/sun.png" alt="light img" />
         )}
       </Container>
     </SContainer>

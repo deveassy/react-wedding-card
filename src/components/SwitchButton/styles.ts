@@ -17,6 +17,7 @@ export const Container = styled.div`
   font-size: 16px;
   font-weight: bold;
   border-radius: 10px;
+  cursor: pointer;
   @media only screen and (min-width: 600px) {
     right: 15%;
   }
@@ -31,13 +32,9 @@ export const Container = styled.div`
 `;
 
 export const ModeImg = styled.img`
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
   border-radius: 50%;
-  background: ${(props) => {
-    if (props.src === "/img/moon.png") return "#FFED99";
-    return "#F9B208";
-  }};
 `;
 
 export const SContainer = styled.div`
