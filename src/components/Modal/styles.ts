@@ -44,7 +44,7 @@ const OpenModal = styled.section<OpenModalProps>`
 
 const ModalHeader = styled.header`
   position: relative;
-  padding: 16px 30px 0 30px;
+  padding: 25px 30px 0 30px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -70,7 +70,8 @@ const ModalFooter = styled.footer`
 const CloseButton = styled.button`
   padding: 8px 70px;
   color: #fff;
-  background-color: #687980;
+  background-color: ${(props) => props.theme.basicBtnBg};
+  border: 0;
   border-radius: 5px;
   font-size: 13px;
   cursor: pointer;

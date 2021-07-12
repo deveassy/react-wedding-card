@@ -12,7 +12,7 @@ export const Container = styled.div`
   padding: 5px;
   border: 1px solid ${(props) => props.theme.basicLine};
 
-  background-color: ${(props) => props.theme.basicBtnBg};
+  background-color: ${(props) => props.theme.secondBtnBg};
   color: ${(props) => props.theme.basicFont};
   font-size: 16px;
   font-weight: bold;

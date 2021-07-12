@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes, css } from "styled-components";
 
 const FlexDiv = styled.div`
   display: flex;
@@ -43,18 +43,36 @@ const GroomMsg = styled.p`
 
 const AccountBox = styled(FlexDiv)``;
 
-const MoneyButton = styled.button`
+type borderProps = {
+  active: any;
+};
+
+const MoneyButton = styled.button<borderProps>`
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 10px;
   border: 0;
   background-color: transparent;
-  background-image: linear-gradient(180deg, #c2255c, #ff922b, #fab005);
+  background-image: linear-gradient(130deg, #6578f2, #c2255c, #ff922b, #fff6b7);
   background-origin: border-box;
   background-clip: content-box;
+  ${(props) => {
+    if (props.active) {
+      return css`
+        animation: ${borderAni} 3s ease infinite;
+      `;
+    }
+  }};
   cursor: pointer;
 `;
+
+const borderAni = keyframes`
+  0% { width: 0% 50%; } 
+  50% { width: 100% 50%; } 
+  100% { width: 0% 50%; }
+`;
+
 const MoneyImg = styled.img`
   width: 100px;
   margin: 3px;

@@ -50,7 +50,7 @@ const MoneyButton = styled.button`
   margin-top: 10px;
   border: 0;
   background-color: transparent;
-  background-image: linear-gradient(180deg, #c2255c, #ff922b, #fab005);
+  background-image: linear-gradient(130deg, #6578f2, #c2255c, #ff922b, #fff6b7);
   background-origin: border-box;
   background-clip: content-box;
   cursor: pointer;

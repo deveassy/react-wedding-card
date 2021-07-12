@@ -17,7 +17,11 @@ import {
   CopyButton,
 } from "./styles";
 
-function GroomPage() {
+type IProps = {
+  active: any;
+};
+
+function GroomPage({ active }: IProps) {
   const [modalOpen, setModalOpen] = useState(false);
 
   const openModal = () => {
@@ -58,7 +62,7 @@ function GroomPage() {
         <p style={{ margin: 0 }}>가긴 어렵지만 축하해주고 싶으신 분들께서는</p>
       </AccountMsg>
       <AccountBox>
-        <MoneyButton onClick={openModal}>
+        <MoneyButton onClick={openModal} active={active}>
           <MoneyImg
             src="/img/money.jpeg"
             alt="money img"
@@ -70,7 +74,7 @@ function GroomPage() {
           open={modalOpen}
           close={closeModal}
           header="/img/emoticon2.png"
-          footer="보내러가자~"
+          footer="보내러가볼까?"
         >
           <MainContainer>
             <p style={{ margin: 0 }}>감사합니다. 잘 쓸게요!</p>

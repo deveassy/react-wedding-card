@@ -69,7 +69,7 @@ function BridePage() {
           open={modalOpen}
           close={closeModal}
           header="/img/emoticon1.png"
-          footer="보내러가자~"
+          footer="보내러가볼까?"
         >
           <MainContainer>
             <p style={{ margin: 0 }}>감사합니다. 잘 쓸게요!</p>
