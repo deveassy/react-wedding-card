@@ -23,6 +23,7 @@ type IProps = {
 
 function GroomPage({ active }: IProps) {
   const [modalOpen, setModalOpen] = useState(false);
+  const [disabled, setDisabled] = useState(false);
 
   const openModal = () => {
     setModalOpen(true);
@@ -38,7 +39,8 @@ function GroomPage({ active }: IProps) {
     document.execCommand("copy"); //복사
     obj.setSelectionRange(0, 0); //선택영역 초기화
 
-    (document.getElementById("button") as HTMLInputElement).disabled = true;
+    setDisabled(true);
+    console.log("button 비활성화");
   };
 
   return (
@@ -86,8 +88,12 @@ function GroomPage({ active }: IProps) {
                 value="123456700"
                 readOnly
               />
-              <CopyButton onClick={handleCopy} id="button">
-                복사
+              <CopyButton onClick={handleCopy} disabled={disabled}>
+                <img
+                  src="/img/copyLight.png"
+                  alt="copy img"
+                  style={{ width: "20px", height: "20px" }}
+                />
               </CopyButton>
             </NumContainer>
           </MainContainer>

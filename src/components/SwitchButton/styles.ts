@@ -8,15 +8,6 @@ export const Container = styled.div`
   top: 20px;
   right: 7%;
   z-index: 90;
-  width: 50px;
-  padding: 5px;
-  border: 1px solid ${(props) => props.theme.basicLine};
-
-  background-color: ${(props) => props.theme.secondBtnBg};
-  color: ${(props) => props.theme.basicFont};
-  font-size: 16px;
-  font-weight: bold;
-  border-radius: 10px;
   cursor: pointer;
   @media only screen and (min-width: 600px) {
     right: 15%;
@@ -32,12 +23,11 @@ export const Container = styled.div`
 `;
 
 export const ModeImg = styled.img`
-  width: 25px;
-  height: 25px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
 `;
 
 export const SContainer = styled.div`
   width: 100%;
-  background-color: green;
 `;

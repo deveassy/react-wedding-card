@@ -1,21 +1,20 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Pagination, Autoplay, Navigation } from "swiper";
+import SwiperCore, { Pagination } from "swiper";
 import { SwiperContainer, WeddingDay, WeddingCount, SlideImg } from "./styles";
 
 import "swiper/swiper.scss";
 import "swiper/components/pagination/pagination.scss";
-import "swiper/components/navigation/navigation.scss";
 
-SwiperCore.use([Pagination, Autoplay, Navigation]);
+SwiperCore.use([Pagination]);
 
 /**
  * 슬라이더 사진 모음
  */
 const sliders = [
-  { src: "/img/IMG1.png", alt: "swiper img1" },
-  { src: "/img/IMG2.jpeg", alt: "swiper img2" },
-  { src: "/img/IMG3.jpeg", alt: "swiper img3" },
+  { src: "/img/IMG1.png", alt: "slider img1" },
+  { src: "/img/IMG2.jpeg", alt: "slider img2" },
+  { src: "/img/IMG3.jpeg", alt: "slider img3" },
 ];
 
 function SwiperComponent() {

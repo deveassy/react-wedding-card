@@ -46,7 +46,6 @@ const AccountBox = styled(FlexDiv)``;
 type borderProps = {
   active: any;
 };
-
 const MoneyButton = styled.button<borderProps>`
   display: flex;
   align-items: center;
@@ -99,7 +98,10 @@ const MainContainer = styled(FlexDiv)`
 const NumContainer = styled(FlexDiv)`
   justify-content: center;
   width: 100%;
-  height: 50px;
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #fff4e6;
+  color: #000;
 `;
 
 const AccountNum = styled.input`
@@ -108,14 +110,18 @@ const AccountNum = styled.input`
   border: 0;
   outline: none;
   background-color: transparent;
-  color: ${(props) => props.theme.basicFont};
 `;
 
 const CopyButton = styled.button`
-  padding: 5px 10px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
+  border: 0;
+  background-color: transparent;
   cursor: pointer;
+  ${(props) =>
+    props.disabled
+      ? css`
+          opacity: 0.2;
+        `
+      : null};
 `;
 
 export {

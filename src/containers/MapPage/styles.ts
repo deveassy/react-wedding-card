@@ -21,8 +21,6 @@ const MapBox = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
-  /* margin: 10px; */
-  background-color: ${(props) => props.theme.basicContentBox};
   border-radius: 2px;
 `;
 

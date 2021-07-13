@@ -44,7 +44,7 @@ const OpenModal = styled.section<OpenModalProps>`
 
 const ModalHeader = styled.header`
   position: relative;
-  padding: 25px 30px 0 30px;
+  padding: 40px 30px 0 30px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -57,19 +57,20 @@ const ModalMain = styled.main`
   justify-content: center;
   align-items: center;
   padding: 15px;
-  border-bottom: 1px solid ${(props) => props.theme.basicLine};
-  border-top: 1px solid ${(props) => props.theme.basicLine};
+  /* border-bottom: 1px solid ${(props) => props.theme.basicLine}; */
+  /* border-top: 1px solid ${(props) => props.theme.basicLine}; */
   color: ${(props) => props.theme.basicFont};
 `;
 
 const ModalFooter = styled.footer`
-  padding: 12px 16px;
+  padding: 12px 16px 20px;
   text-align: center;
 `;
 
 const CloseButton = styled.button`
-  padding: 8px 70px;
+  padding: 10px 70px;
   color: #fff;
+  font-weight: bold;
   background-color: ${(props) => props.theme.basicBtnBg};
   border: 0;
   border-radius: 5px;

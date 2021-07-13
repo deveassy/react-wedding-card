@@ -19,6 +19,7 @@ import {
 
 function BridePage() {
   const [modalOpen, setModalOpen] = useState(false);
+  const [disabled, setDisabled] = useState(false);
 
   const openModal = () => {
     setModalOpen(true);
@@ -34,7 +35,8 @@ function BridePage() {
     document.execCommand("copy"); //복사
     obj.setSelectionRange(0, 0); //선택영역 초기화
 
-    (document.getElementById("button") as HTMLInputElement).disabled = true;
+    setDisabled(true);
+    console.log("button 비활성화");
   };
   return (
     <Container>
@@ -81,8 +83,12 @@ function BridePage() {
                 value="123456700"
                 readOnly
               />
-              <CopyButton onClick={handleCopy} id="button">
-                복사
+              <CopyButton onClick={handleCopy} disabled={disabled}>
+                <img
+                  src="/img/copyLight.png"
+                  alt="copy img"
+                  style={{ width: "20px", height: "20px" }}
+                />
               </CopyButton>
             </NumContainer>
           </MainContainer>
