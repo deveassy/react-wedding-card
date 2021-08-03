@@ -2,13 +2,7 @@ import React, { ReactElement } from "react";
 import { Switch, Route } from "react-router-dom";
 
 /* 페이지 */
-import {
-  MainPage,
-  GroomPage,
-  BridePage,
-  MapPage,
-  PhotoPage,
-} from "../containers";
+import { MainPage, GroomPage, BridePage, MapPage } from "../containers";
 /* 컴포넌트 */
 import { Header, RouterContainer } from "../components";
 /* 라우트 정보 */
@@ -29,7 +23,6 @@ export default function MainRoutes() {
         <Route path={pathInfo.groom} component={GroomPage} />
         <Route path={pathInfo.bride} component={BridePage} />
         <Route path={pathInfo.map} component={MapPage} />
-        <Route path={pathInfo.photo} component={PhotoPage} />
       </Switch>
     </RouterContainer>
   );
