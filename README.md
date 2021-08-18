@@ -15,7 +15,7 @@
 - react
 - typescript
 - react-router-dom
-- redux
+- redux (logger, devtools)
 - Swiper
 - sass
 - styled-components
@@ -43,7 +43,7 @@
 #### Deep link
 
 Map page에서 웹과 앱을 연결하는 작업이 필요했습니다.<br />
-때문에 처음엔, 사용자가 사용중인 **디바이스를 체크**하여 웹과 앱의 링크(URI shceme)를 분기하여 연결하였습니다.<br />
+때문에 사용자가 사용중인 **디바이스를 체크**하여 웹과 앱의 링크(URI shceme)를 분기하여 연결하였습니다.<br />
 
 #### UX 디자인
 
