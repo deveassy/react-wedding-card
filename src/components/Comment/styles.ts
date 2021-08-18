@@ -82,6 +82,7 @@ const SubmitBtn = styled.button`
   border: none;
   background-color: transparent;
   color: #52a6df;
+  cursor: pointer;
 `;
 
 // comment 부분 스타일링

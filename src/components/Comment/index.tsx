@@ -22,15 +22,16 @@ type InputState = {
   content: string;
 };
 type AddComment = (state: InputState) => void;
-
 type CommentStateProps = {
   comments: CommentType[];
 };
-
 type CommentOutputProps = {
   comment: CommentType;
 };
 
+/**
+ * @returns 개별 댓글
+ */
 function CommentOutput(props: CommentOutputProps) {
   const { comment } = props;
   return (
@@ -52,11 +53,12 @@ export default function CommentComponent(props: CommentStateProps) {
     username: "",
     content: "",
   });
-
   const [visible, setVisible] = useState(false);
   const [isActive, setIsActive] = useState(false);
+  const [message, setMessage] = useState("");
 
   const inputRef = useRef<HTMLInputElement>(null);
+  const dispatch = useDispatch();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -68,16 +70,21 @@ export default function CommentComponent(props: CommentStateProps) {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!inputs.username || !inputs.content) return null;
+    setIsActive(true);
+    if (!inputs.username || !inputs.content)
+      return setMessage("빈칸을 채워주세요.");
     addTweet(inputs);
+    setMessage("게시되었습니다.");
     setInputs({
       username: "",
       content: "",
     });
   };
 
-  const dispatch = useDispatch();
-
+  /**
+   * 댓글창에 값 새로 추가하기
+   * @param args input창에 입력되는 값
+   */
   const addTweet: AddComment = (args) => {
     const { username, content } = args;
     const comment = {
@@ -103,6 +110,9 @@ export default function CommentComponent(props: CommentStateProps) {
 
   const count = comments.length;
 
+  /**
+   * 댓글창 여닫는 함수
+   */
   const handleFolder = () => {
     setVisible(!visible);
   };
@@ -145,11 +155,9 @@ export default function CommentComponent(props: CommentStateProps) {
               value={inputs.content}
               onChange={handleChange}
             />
-            <SubmitBtn type="submit" onClick={() => setIsActive(true)}>
-              게시
-            </SubmitBtn>
+            <SubmitBtn type="submit">게시</SubmitBtn>
             <ToastMessage isActive={isActive} setIsActive={setIsActive}>
-              게시 되었습니다
+              {message}
             </ToastMessage>
           </BtnInInputBox>
         </FormBox>
