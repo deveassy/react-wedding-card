@@ -11,11 +11,10 @@ export default function SwitchButton(props: SwitchProps) {
   return (
     <SContainer>
       <Container onClick={changeTheme}>
-        {isDark ? (
-          <ModeImg src="/img/moon.png" alt="dark img" />
-        ) : (
-          <ModeImg src="/img/sun.png" alt="light img" />
-        )}
+        <ModeImg
+          src={isDark ? "/img/moon.png" : "/img/sun.png"}
+          alt={isDark ? "dark img" : "light img"}
+        />
       </Container>
     </SContainer>
   );
