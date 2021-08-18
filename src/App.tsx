@@ -3,15 +3,20 @@ import { ThemeProvider } from "styled-components";
 import { GlobalStyle, Container, Img } from "./globals/styles.js";
 import RootRoute from "./routes";
 
-import { createStore } from "redux";
+import { applyMiddleware, createStore } from "redux";
 import { Provider, useDispatch } from "react-redux";
 import rootReducer from "./modules";
 import { updatePost } from "./modules/post";
 import { darkTheme, lightTheme } from "./globals/theme";
 import SwitchButton from "./components/SwitchButton";
 import useThemeMode from "./hooks/useThemeMode";
+import { composeWithDevTools } from "redux-devtools-extension";
+import { createLogger } from "redux-logger";
 
-const store = createStore(rootReducer);
+const store = createStore(
+  rootReducer,
+  composeWithDevTools(applyMiddleware(createLogger()))
+);
 
 function RenderApp() {
   const { themeMode, switchThemeMode } = useThemeMode();
