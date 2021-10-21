@@ -5,13 +5,13 @@ const FlexDiv = styled.div`
   align-items: center;
 `;
 
-// const Loader = styled(FlexDiv)`
-//   flex-direction: column;
-//   justify-content: center;
-//   margin-top: 200px;
-//   font-size: 20px;
-//   color: #999;
-// `;
+const SpinnerContainer = styled(FlexDiv)`
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 200px;
+  font-size: 20px;
+  color: #999;
+`;
 
 // 피드(프로필이름 + 사진슬라이더 + 좋아요 + 메세지)
 const FeedBox = styled.div``;
@@ -44,7 +44,7 @@ const MainMsg = styled.p`
 `;
 
 export {
-  // Loader,
+  SpinnerContainer,
   FeedBox,
   ProfileNameBox,
   ProfileImg,
