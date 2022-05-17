@@ -3,7 +3,7 @@
 ## 📌 Description
 
 <img width="192" alt="스크린샷 2021-07-03 오후 5 13 43" src="https://user-images.githubusercontent.com/58814562/124347925-096bf180-dc22-11eb-8d39-035158b47189.png"><br />
-[구경오세요!🤗](https://doristagram.web.app/)<br />
+[구경오세요!🤗](https://doristagram.herokuapp.com/)<br />
 친한친구의 결혼식을 앞두고, 개발자를 준비하는 사람으로서 할 수 있는 일을 하고자 시작한 프로젝트입니다.<br />
 기존 모바일청첩장에 지루함이 느껴져서, 인스타그램를 즐겨하는 친구를 위해<br />
 **인스타그램 스타일로 만든 모바일 청첩장**입니다.
